@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../index.html">
       
-        <link rel="next" href="enum/trigger.html">
+      
+        <link rel="next" href="../element/player.html">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Home - AG: JavaScript API Docs</title>
+        <title>trigger - AG: JavaScript API Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="css/custom.css">
+      <link rel="stylesheet" href="../css/custom.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -82,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-javascript-api" class="md-skip">
+        <a href="#enum-trigger" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +126,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="AG: JavaScript API Docs" class="md-header__button md-logo" aria-label="AG: JavaScript API Docs" data-md-component="logo">
+    <a href=".." title="AG: JavaScript API Docs" class="md-header__button md-logo" aria-label="AG: JavaScript API Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -144,7 +146,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              trigger
             
           </span>
         </div>
@@ -266,7 +268,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="index.html" class="md-tabs__link">
+        <a href="../index.html" class="md-tabs__link">
           
   
   
@@ -300,7 +302,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="AG: JavaScript API Docs" class="md-nav__button md-logo" aria-label="AG: JavaScript API Docs" data-md-component="logo">
+    <a href=".." title="AG: JavaScript API Docs" class="md-nav__button md-logo" aria-label="AG: JavaScript API Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -373,19 +375,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -396,7 +389,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -406,6 +398,8 @@
                 
   
   
+    
+  
   
   
     
@@ -416,11 +410,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
@@ -436,7 +430,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             enum
@@ -447,10 +441,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="enum/trigger.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    trigger
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="trigger.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -461,6 +477,356 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gongjibefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fashubefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      faShuBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teshubefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      teShuBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shengguang" class="md-nav__link">
+    <span class="md-ellipsis">
+      shengGuang
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dachupai" class="md-nav__link">
+    <span class="md-ellipsis">
+      daChuPai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjishi" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiShi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useskill" class="md-nav__link">
+    <span class="md-ellipsis">
+      useSkill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjishezhi" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiSheZhi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaogongjibefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoGongJiBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaogongji" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoGongJi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaomodan" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoMoDan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjimingzhong" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiMingZhong
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjiweimingzhong" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiWeiMingZhong
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjimingzhongafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiMingZhongAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjiend" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiEnd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fashuend" class="md-nav__link">
+    <span class="md-ellipsis">
+      faShuEnd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teshuend" class="md-nav__link">
+    <span class="md-ellipsis">
+      teShuEnd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjiafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fashuafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      faShuAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teshuafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      teShuAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zaochengshanghai" class="md-nav__link">
+    <span class="md-ellipsis">
+      zaoChengShangHai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaoshanghai" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoShangHai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chanshengshanghai" class="md-nav__link">
+    <span class="md-ellipsis">
+      chanShengShangHai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chengshoushanghai" class="md-nav__link">
+    <span class="md-ellipsis">
+      chengShouShangHai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chengshoushanghaiafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      chengShouShangHaiAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaoshanghaiafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoShangHaiAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changeshiqijudge" class="md-nav__link">
+    <span class="md-ellipsis">
+      changeShiQiJudge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changeshiqibefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      changeShiQiBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changeshiqiend" class="md-nav__link">
+    <span class="md-ellipsis">
+      changeShiQiEnd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changeshiqiafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      changeShiQiAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zhanjiyichu" class="md-nav__link">
+    <span class="md-ellipsis">
+      zhanJiYiChu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zhishiwuyichu" class="md-nav__link">
+    <span class="md-ellipsis">
+      zhiShiWuYiChu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zhiliaoyichu" class="md-nav__link">
+    <span class="md-ellipsis">
+      zhiLiaoYiChu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gainjichuxiaoguo" class="md-nav__link">
+    <span class="md-ellipsis">
+      gainJiChuXiaoGuo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removejichuxiaoguo" class="md-nav__link">
+    <span class="md-ellipsis">
+      removeJiChuXiaoGuo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -522,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="element/player.html" class="md-nav__link">
+      <a href="../element/player.html" class="md-nav__link">
         
   
   
@@ -635,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="noname/get/get.html" class="md-nav__link">
+      <a href="../noname/get/get.html" class="md-nav__link">
         
   
   
@@ -658,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="noname/get/is.html" class="md-nav__link">
+      <a href="../noname/get/is.html" class="md-nav__link">
         
   
   
@@ -730,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="noname/game/game.html" class="md-nav__link">
+      <a href="../noname/game/game.html" class="md-nav__link">
         
   
   
@@ -789,6 +1155,344 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      常量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gongjibefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fashubefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      faShuBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teshubefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      teShuBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shengguang" class="md-nav__link">
+    <span class="md-ellipsis">
+      shengGuang
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dachupai" class="md-nav__link">
+    <span class="md-ellipsis">
+      daChuPai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjishi" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiShi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useskill" class="md-nav__link">
+    <span class="md-ellipsis">
+      useSkill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjishezhi" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiSheZhi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaogongjibefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoGongJiBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaogongji" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoGongJi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaomodan" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoMoDan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjimingzhong" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiMingZhong
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjiweimingzhong" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiWeiMingZhong
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjimingzhongafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiMingZhongAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjiend" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiEnd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fashuend" class="md-nav__link">
+    <span class="md-ellipsis">
+      faShuEnd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teshuend" class="md-nav__link">
+    <span class="md-ellipsis">
+      teShuEnd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gongjiafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      gongJiAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fashuafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      faShuAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teshuafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      teShuAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zaochengshanghai" class="md-nav__link">
+    <span class="md-ellipsis">
+      zaoChengShangHai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaoshanghai" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoShangHai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chanshengshanghai" class="md-nav__link">
+    <span class="md-ellipsis">
+      chanShengShangHai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chengshoushanghai" class="md-nav__link">
+    <span class="md-ellipsis">
+      chengShouShangHai
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chengshoushanghaiafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      chengShouShangHaiAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoudaoshanghaiafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouDaoShangHaiAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changeshiqijudge" class="md-nav__link">
+    <span class="md-ellipsis">
+      changeShiQiJudge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changeshiqibefore" class="md-nav__link">
+    <span class="md-ellipsis">
+      changeShiQiBefore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changeshiqiend" class="md-nav__link">
+    <span class="md-ellipsis">
+      changeShiQiEnd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changeshiqiafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      changeShiQiAfter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zhanjiyichu" class="md-nav__link">
+    <span class="md-ellipsis">
+      zhanJiYiChu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zhishiwuyichu" class="md-nav__link">
+    <span class="md-ellipsis">
+      zhiShiWuYiChu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zhiliaoyichu" class="md-nav__link">
+    <span class="md-ellipsis">
+      zhiLiaoYiChu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gainjichuxiaoguo" class="md-nav__link">
+    <span class="md-ellipsis">
+      gainJiChuXiaoGuo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removejichuxiaoguo" class="md-nav__link">
+    <span class="md-ellipsis">
+      removeJiChuXiaoGuo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -806,8 +1510,79 @@
   
 
 
-<h1 id="-javascript-api">无名杀-星杯传说 JavaScript API 文档<a class="headerlink" href="#-javascript-api" title="Permanent link">⚓︎</a></h1>
-<p>本文档对 <a href="https://github.com/RancherJie/noname_xingbei"><code>noname_xingbei</code></a> 模块中提供的函数进行了补充说明，涵盖功能描述及代码使用示例，旨在为开发者提供清晰、实用的参考资料。</p>
+<h1 id="enum-trigger">Enum "Trigger"<a class="headerlink" href="#enum-trigger" title="Permanent link">⚓︎</a></h1>
+<p>通常用在响应技能，用于声明技能的触发时机，以下为星杯传说中自定义的hook。</p>
+<h2 id="_1">常量<a class="headerlink" href="#_1" title="Permanent link">⚓︎</a></h2>
+<h3 id="gongjibefore">gongJiBefore<a class="headerlink" href="#gongjibefore" title="Permanent link">⚓︎</a></h3>
+<p>执行攻击行动前</p>
+<h3 id="fashubefore">faShuBefore<a class="headerlink" href="#fashubefore" title="Permanent link">⚓︎</a></h3>
+<p>执行法术行动前</p>
+<h3 id="teshubefore">teShuBefore<a class="headerlink" href="#teshubefore" title="Permanent link">⚓︎</a></h3>
+<p>执行特殊行动前（买合提）</p>
+<h3 id="shengguang">shengGuang<a class="headerlink" href="#shengguang" title="Permanent link">⚓︎</a></h3>
+<p>打出圣光时</p>
+<h3 id="dachupai">daChuPai<a class="headerlink" href="#dachupai" title="Permanent link">⚓︎</a></h3>
+<p>打出牌的时候</p>
+<h3 id="gongjishi">gongJiShi<a class="headerlink" href="#gongjishi" title="Permanent link">⚓︎</a></h3>
+<p>攻击行动开始时</p>
+<h3 id="useskill">useSkill<a class="headerlink" href="#useskill" title="Permanent link">⚓︎</a></h3>
+<p>使用角色技能时</p>
+<h3 id="gongjishezhi">gongJiSheZhi<a class="headerlink" href="#gongjishezhi" title="Permanent link">⚓︎</a></h3>
+<p>执行攻击动作（对攻击进行相关设置）</p>
+<h3 id="shoudaogongjibefore">shouDaoGongJiBefore<a class="headerlink" href="#shoudaogongjibefore" title="Permanent link">⚓︎</a></h3>
+<p>受到攻击前（非法术）</p>
+<h3 id="shoudaogongji">shouDaoGongJi<a class="headerlink" href="#shoudaogongji" title="Permanent link">⚓︎</a></h3>
+<p>受到攻击时</p>
+<h3 id="shoudaomodan">shouDaoMoDan<a class="headerlink" href="#shoudaomodan" title="Permanent link">⚓︎</a></h3>
+<p>受到魔弹时</p>
+<h3 id="gongjimingzhong">gongJiMingZhong<a class="headerlink" href="#gongjimingzhong" title="Permanent link">⚓︎</a></h3>
+<p>攻击命中时</p>
+<h3 id="gongjiweimingzhong">gongJiWeiMingZhong<a class="headerlink" href="#gongjiweimingzhong" title="Permanent link">⚓︎</a></h3>
+<p>攻击未命中时</p>
+<h3 id="gongjimingzhongafter">gongJiMingZhongAfter<a class="headerlink" href="#gongjimingzhongafter" title="Permanent link">⚓︎</a></h3>
+<p>攻击命中后</p>
+<h3 id="gongjiend">gongJiEnd<a class="headerlink" href="#gongjiend" title="Permanent link">⚓︎</a></h3>
+<p>执行完攻击行动</p>
+<h3 id="fashuend">faShuEnd<a class="headerlink" href="#fashuend" title="Permanent link">⚓︎</a></h3>
+<p>执行完法术行动</p>
+<h3 id="teshuend">teShuEnd<a class="headerlink" href="#teshuend" title="Permanent link">⚓︎</a></h3>
+<p>执行完特殊行动</p>
+<h3 id="gongjiafter">gongJiAfter<a class="headerlink" href="#gongjiafter" title="Permanent link">⚓︎</a></h3>
+<p>攻击行动后</p>
+<h3 id="fashuafter">faShuAfter<a class="headerlink" href="#fashuafter" title="Permanent link">⚓︎</a></h3>
+<p>法术行动后</p>
+<h3 id="teshuafter">teShuAfter<a class="headerlink" href="#teshuafter" title="Permanent link">⚓︎</a></h3>
+<p>特殊行动后</p>
+<h3 id="zaochengshanghai">zaoChengShangHai<a class="headerlink" href="#zaochengshanghai" title="Permanent link">⚓︎</a></h3>
+<p>造成伤害（伤害还没结算）</p>
+<h3 id="shoudaoshanghai">shouDaoShangHai<a class="headerlink" href="#shoudaoshanghai" title="Permanent link">⚓︎</a></h3>
+<p>受到伤害（伤害还没结算）</p>
+<h3 id="chanshengshanghai">chanShengShangHai<a class="headerlink" href="#chanshengshanghai" title="Permanent link">⚓︎</a></h3>
+<p>产生伤害（伤害结算时）</p>
+<h3 id="chengshoushanghai">chengShouShangHai<a class="headerlink" href="#chengshoushanghai" title="Permanent link">⚓︎</a></h3>
+<p>承受伤害（伤害结算时）</p>
+<h3 id="chengshoushanghaiafter">chengShouShangHaiAfter<a class="headerlink" href="#chengshoushanghaiafter" title="Permanent link">⚓︎</a></h3>
+<p>承受伤害后</p>
+<h3 id="shoudaoshanghaiafter">shouDaoShangHaiAfter<a class="headerlink" href="#shoudaoshanghaiafter" title="Permanent link">⚓︎</a></h3>
+<p>受到伤害后</p>
+<h3 id="changeshiqijudge">changeShiQiJudge<a class="headerlink" href="#changeshiqijudge" title="Permanent link">⚓︎</a></h3>
+<p>士气改变判断</p>
+<h3 id="changeshiqibefore">changeShiQiBefore<a class="headerlink" href="#changeshiqibefore" title="Permanent link">⚓︎</a></h3>
+<p>士气改变前</p>
+<h3 id="changeshiqiend">changeShiQiEnd<a class="headerlink" href="#changeshiqiend" title="Permanent link">⚓︎</a></h3>
+<p>士气改变结束</p>
+<h3 id="changeshiqiafter">changeShiQiAfter<a class="headerlink" href="#changeshiqiafter" title="Permanent link">⚓︎</a></h3>
+<p>士气改变后</p>
+<h3 id="zhanjiyichu">zhanJiYiChu<a class="headerlink" href="#zhanjiyichu" title="Permanent link">⚓︎</a></h3>
+<p>移除战绩区的能量</p>
+<h3 id="zhishiwuyichu">zhiShiWuYiChu<a class="headerlink" href="#zhishiwuyichu" title="Permanent link">⚓︎</a></h3>
+<p>移除指示物</p>
+<h3 id="zhiliaoyichu">zhiLiaoYiChu<a class="headerlink" href="#zhiliaoyichu" title="Permanent link">⚓︎</a></h3>
+<p>移除治疗</p>
+<h3 id="gainjichuxiaoguo">gainJiChuXiaoGuo<a class="headerlink" href="#gainjichuxiaoguo" title="Permanent link">⚓︎</a></h3>
+<p>获得基础效果（中毒，虚弱，圣盾）</p>
+<h3 id="removejichuxiaoguo">removeJiChuXiaoGuo<a class="headerlink" href="#removejichuxiaoguo" title="Permanent link">⚓︎</a></h3>
+<p>移除基础效果</p>
 
 
 
@@ -875,7 +1650,7 @@
     
      
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["search.suggest", "search.highlight", "search.share", "navigation.tabs", "navigation.instant", "navigation.top"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "rep", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "search.share", "navigation.tabs", "navigation.instant", "navigation.top"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "rep", "provider": "mike"}}</script>
     
 <script>
     var __search = {
@@ -898,17 +1673,17 @@
 </script>
 
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
-        <script src="js/tablesort.number.min.js"></script>
+        <script src="../js/tablesort.number.min.js"></script>
       
-        <script src="js/customJS.js"></script>
+        <script src="../js/customJS.js"></script>
       
-        <script src="js/jquery.mark.min.js"></script>
+        <script src="../js/jquery.mark.min.js"></script>
       
     
   </body>

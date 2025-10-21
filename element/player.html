@@ -3605,382 +3605,430 @@
 
 
 <h1 id="class-player">Class "Player"<a class="headerlink" href="#class-player" title="Permanent link">⚓︎</a></h1>
-<p>本文档介绍Player类的经常使用的属性和方法，全部属性和方法请参考源码
-文件路径：noname/library/element/player.js</p>
+<p>本文档介绍Player类的经常使用的属性和方法，全部属性和方法请参考源码</p>
+<p>文件路径：noname/library/element/player.js</p>
 <h2 id="_1">属性<a class="headerlink" href="#_1" title="Permanent link">⚓︎</a></h2>
 <h3 id="zhiliao">zhiLiao<a class="headerlink" href="#zhiliao" title="Permanent link">⚓︎</a></h3>
 <p>玩家治疗数量，数值</p>
-<pre><code class="language-javascript">var zhiLiaoNum=player.zhiLiao; //2
+<pre><code class="language-javascript">var zhiLiaoNum = player.zhiLiao; //2
 </code></pre>
 <h3 id="storage">storage<a class="headerlink" href="#storage" title="Permanent link">⚓︎</a></h3>
 <p>玩家存储区，字典，常用于存储各种自定义属性</p>
-<pre><code class="language-javascript">player.storage['test']='myValue';
-if(player.storage['test']=='myValue'){
-    //do something
+<pre><code class="language-javascript">player.storage[&quot;test&quot;] = &quot;myValue&quot;;
+if (player.storage[&quot;test&quot;] == &quot;myValue&quot;) {
+  //do something
 }
 </code></pre>
 <h3 id="group">group<a class="headerlink" href="#group" title="Permanent link">⚓︎</a></h3>
 <p>玩家势力，字符串</p>
-<pre><code class="language-javascript">var playerGroup=player.group; //'yongGroup'
+<pre><code class="language-javascript">var playerGroup = player.group; //'yongGroup'
 </code></pre>
 <h3 id="side">side<a class="headerlink" href="#side" title="Permanent link">⚓︎</a></h3>
 <p>玩家队伍位置，布尔值，true为红方，false为蓝方</p>
-<pre><code class="language-javascript">var playerSide=player.side; //true
+<pre><code class="language-javascript">var playerSide = player.side; //true
 </code></pre>
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">⚓︎</a></h3>
 <p>玩家角色id，字符串</p>
-<pre><code class="language-javascript">var characterId=player.name; //'fengZhiJianSheng'
+<pre><code class="language-javascript">var characterId = player.name; //'fengZhiJianSheng'
 </code></pre>
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">⚓︎</a></h3>
 <p>玩家下家，Player对象</p>
-<pre><code class="language-javascript">var nextPlayer=player.next; //Player对象
+<pre><code class="language-javascript">var nextPlayer = player.next; //Player对象
 </code></pre>
 <h3 id="previous">previous<a class="headerlink" href="#previous" title="Permanent link">⚓︎</a></h3>
 <p>玩家上家，Player对象</p>
-<pre><code class="language-javascript">var previousPlayer=player.previous; //Player对象
+<pre><code class="language-javascript">var previousPlayer = player.previous; //Player对象
 </code></pre>
 <h2 id="_2">非事件函数<a class="headerlink" href="#_2" title="Permanent link">⚓︎</a></h2>
 <h3 id="initcharacter">init(character)<a class="headerlink" href="#initcharacter" title="Permanent link">⚓︎</a></h3>
 <p>初始化玩家角色</p>
-<pre><code class="language-javascript">player.init('fengZhiJianSheng');
+<pre><code class="language-javascript">player.init(&quot;fengZhiJianSheng&quot;);
 </code></pre>
 <h3 id="getcardsarg1-arg2">getCards(arg1, arg2)<a class="headerlink" href="#getcardsarg1-arg2" title="Permanent link">⚓︎</a></h3>
-<p>获取角色特定区域的牌
-获取角色特定区域的牌数
-支持参数分别为
-- 位置字符串('h'，'x'(盖牌等))
-- 函数(卡牌筛选，card=&gt;get.xiBie=='di'&amp;&amp;get.type(card)=='gongJi')，若未设置位置字符串，默认为'h'
-返回值为列表</p>
-<pre><code class="language-javascript">player.getCards('h'); //[card1,card2,card3]
+<p>获取角色特定区域的牌</p>
+<p>支持参数分别为</p>
+<ul>
+<li>位置字符串('h'，'x'(盖牌等))</li>
+<li>函数(卡牌筛选，card=&gt;get.xiBie=='di'&amp;&amp;get.type(card)=='gongJi')，若未设置位置字符串，默认为'h'</li>
+</ul>
+<p>返回值为列表</p>
+<pre><code class="language-javascript">player.getCards(&quot;h&quot;); //[card1,card2,card3]
 </code></pre>
 <h3 id="countcardsarg1-arg2">countCards(arg1, arg2)<a class="headerlink" href="#countcardsarg1-arg2" title="Permanent link">⚓︎</a></h3>
-<p>获取角色特定区域的牌数
-支持参数分别为
-- 位置字符串('h'，'x'(盖牌等))
-- 函数(卡牌筛选，card=&gt;card.name=='anMie')，若未设置位置字符串，默认为'h'
-返回值为属数值</p>
-<pre><code class="language-javascript">player.countCards('h',card=&gt;get.mingGe(card)=='xue'); //3
+<p>获取角色特定区域的牌数</p>
+<p>支持参数分别为</p>
+<ul>
+<li>位置字符串('h'，'x'(盖牌等))</li>
+<li>函数(卡牌筛选，card=&gt;card.name=='anMie')，若未设置位置字符串，默认为'h'</li>
+</ul>
+<p>返回值为属数值</p>
+<pre><code class="language-javascript">player.countCards(&quot;h&quot;, (card) =&gt; get.mingGe(card) == &quot;xue&quot;); //3
 </code></pre>
 <h3 id="hascardname-position">hasCard(name, position)<a class="headerlink" href="#hascardname-position" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否拥有某张牌
-支持参数分别为
-- 筛选条件(字符串、函数)
-- 位置字符串('h'，'x'(盖牌等))，若未设置位置字符串，默认为'h'
-返回值为布尔</p>
-<pre><code class="language-javascript">player.hasCard('anMie','h'); //true
+<p>判断角色是否拥有某张牌</p>
+<p>支持参数分别为</p>
+<ul>
+<li>筛选条件(字符串、函数)</li>
+<li>位置字符串('h'，'x'(盖牌等))，若未设置位置字符串，默认为'h'</li>
+</ul>
+<p>返回值为布尔</p>
+<pre><code class="language-javascript">player.hasCard(&quot;anMie&quot;, &quot;h&quot;); //true
 </code></pre>
 <h3 id="addgongjiorfashunum">addGongJiOrFaShu(num)<a class="headerlink" href="#addgongjiorfashunum" title="Permanent link">⚓︎</a></h3>
-<p>角色获得额外num个攻击或法术行动，num默认为1
-返回值为增加后的攻击或者法术行动数量</p>
+<p>角色获得额外num个攻击或法术行动，num默认为1</p>
+<p>返回值为增加后的攻击或者法术行动数量</p>
 <pre><code class="language-javascript">player.addGongJiOrFaShu(2); //2
 </code></pre>
 <h3 id="addgongjinum">addGongJi(num)<a class="headerlink" href="#addgongjinum" title="Permanent link">⚓︎</a></h3>
-<p>角色获得额外num个攻击行动，num默认为1
-返回值为增加后的攻击行动数量</p>
+<p>角色获得额外num个攻击行动，num默认为1</p>
+<p>返回值为增加后的攻击行动数量</p>
 <pre><code class="language-javascript">player.addGongJi(); //1
 </code></pre>
 <h3 id="addfashunum">addFaShu(num)<a class="headerlink" href="#addfashunum" title="Permanent link">⚓︎</a></h3>
-<p>角色获得额外num个法术行动，num默认为1
-返回值为增加后的法术行动数量</p>
+<p>角色获得额外num个法术行动，num默认为1</p>
+<p>返回值为增加后的法术行动数量</p>
 <pre><code class="language-javascript">player.addFaShu(); //1
 </code></pre>
 <h3 id="hasjichuxiaoguojichuxiaoguo">hasJiChuXiaoGuo(jiChuXiaoGuo)<a class="headerlink" href="#hasjichuxiaoguojichuxiaoguo" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否拥有某种基础效果；若无jiChuXiaoGuo参数，则判断是否拥有任意基础效果
-返回值为布尔值</p>
-<pre><code class="language-javascript">player.hasJiChuXiaoGuo('zhongDu'); //false
+<p>判断角色是否拥有某种基础效果；若无jiChuXiaoGuo参数，则判断是否拥有任意基础效果</p>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">player.hasJiChuXiaoGuo(&quot;zhongDu&quot;); //false
 </code></pre>
 <h3 id="jichuxiaoguolist">jiChuXiaoGuoList()<a class="headerlink" href="#jichuxiaoguolist" title="Permanent link">⚓︎</a></h3>
-<p>获取角色当前的所有基础效果
-返回值为数组</p>
+<p>获取角色当前的所有基础效果</p>
+<p>返回值为数组</p>
 <pre><code class="language-javascript">player.jiChuXiaoGuoList(); //['_shengDun','xunJieCiFu_xiaoGuo']
 </code></pre>
 <h3 id="canteshu">canTeShu()<a class="headerlink" href="#canteshu" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否能执行特殊行动，主要用于ai判断
-返回值为布尔值</p>
+<p>判断角色是否能执行特殊行动，主要用于ai判断</p>
+<p>返回值为布尔值</p>
 <pre><code class="language-javascript">player.canTeShu(); //true
 </code></pre>
 <h3 id="canfashu">canFaShu()<a class="headerlink" href="#canfashu" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否能执行法术行动，包含法术技能，主要用于ai判断
-返回值为布尔值</p>
+<p>判断角色是否能执行法术行动，包含法术技能，主要用于ai判断</p>
+<p>返回值为布尔值</p>
 <pre><code class="language-javascript">player.canFaShu(); //false
 </code></pre>
 <h3 id="cangongji">canGongJi()<a class="headerlink" href="#cangongji" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否能执行攻击行动，主要用于ai判断
-返回值为布尔值</p>
+<p>判断角色是否能执行攻击行动，主要用于ai判断</p>
+<p>返回值为布尔值</p>
 <pre><code class="language-javascript">player.canGongJi(); //true
 </code></pre>
 <h3 id="canxingdongtype">canXingDong(type)<a class="headerlink" href="#canxingdongtype" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否能执行某个行动，主要用于ai判断
-若无type参数，则判断是否能执行任意行动，type可选值为"gongJi"、"faShu"、"teShu"
-返回值为布尔值</p>
+<p>判断角色是否能执行某个行动，主要用于ai判断</p>
+<p>若无type参数，则判断是否能执行任意行动，type可选值为"gongJi"、"faShu"、"teShu"</p>
+<p>返回值为布尔值</p>
 <pre><code class="language-javascript">player.canXingDong(); //true
-player.canXingDong('faShu'); //false
+player.canXingDong(&quot;faShu&quot;); //false
 </code></pre>
 <h3 id="ishengzhi">isHengZhi()<a class="headerlink" href="#ishengzhi" title="Permanent link">⚓︎</a></h3>
-<p>是否横置（在星杯里一般是进形态），可用于判断某个角色是否在形态内
-返回值为布尔值</p>
+<p>是否横置（在星杯里一般是进形态），可用于判断某个角色是否在形态内</p>
+<p>返回值为布尔值</p>
 <pre><code class="language-javascript">player.isHengZhi(); //false
 </code></pre>
 <h3 id="getzhiliaolimit">getZhiLiaoLimit()<a class="headerlink" href="#getzhiliaolimit" title="Permanent link">⚓︎</a></h3>
-<p>获得角色治疗上限数
-返回值为数值</p>
+<p>获得角色治疗上限数</p>
+<p>返回值为数值</p>
 <pre><code class="language-javascript">player.getZhiLiaoLimit(); //3
 </code></pre>
 <h3 id="getnenglianglimit">getNengLiangLimit()<a class="headerlink" href="#getnenglianglimit" title="Permanent link">⚓︎</a></h3>
-<p>获得角色能量上限数
-返回值为数值</p>
+<p>获得角色能量上限数</p>
+<p>返回值为数值</p>
 <pre><code class="language-javascript">player.getNengLiangLimit(); //3
 </code></pre>
 <h3 id="gethandcardlimit">getHandcardLimit()<a class="headerlink" href="#gethandcardlimit" title="Permanent link">⚓︎</a></h3>
-<p>获得角色手牌上限数
-返回值为数值</p>
+<p>获得角色手牌上限数</p>
+<p>返回值为数值</p>
 <pre><code class="language-javascript">player.getHandcardLimit(); //5
 </code></pre>
 <h3 id="canbishashuijing">canBiShaShuiJing()<a class="headerlink" href="#canbishashuijing" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否能发动需要水晶的技能（通常用于filter）
-返回值为布尔</p>
+<p>判断角色是否能发动需要水晶的技能（通常用于filter）</p>
+<p>返回值为布尔</p>
 <pre><code class="language-javascript">player.canBiShaShuiJing(); //true
 </code></pre>
 <h3 id="canbishabaoshi">canBiShaBaoShi()<a class="headerlink" href="#canbishabaoshi" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否能发动需要宝石的技能（通常用于filter）
-返回值为布尔</p>
+<p>判断角色是否能发动需要宝石的技能（通常用于filter）</p>
+<p>返回值为布尔</p>
 <pre><code class="language-javascript">player.canBiShaBaoShi(); //false
 </code></pre>
 <h3 id="counttongxipaitype">countTongXiPai(type)<a class="headerlink" href="#counttongxipaitype" title="Permanent link">⚓︎</a></h3>
-<p>统计同系牌的数量，type可选值为'gongJi'和'faShu'，设置type后只统计该类型的同系牌，不设置则统计所有同系牌
-返回值为数值</p>
-<pre><code class="language-javascript">player.countTongXiPai('faShu'); //2
+<p>统计同系牌的数量，type可选值为'gongJi'和'faShu'，设置type后只统计该类型的同系牌，不设置则统计所有同系牌</p>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">player.countTongXiPai(&quot;faShu&quot;); //2
 </code></pre>
 <h3 id="countyixipaitype">countYiXiPai(type)<a class="headerlink" href="#countyixipaitype" title="Permanent link">⚓︎</a></h3>
-<p>统计异系牌的数量，type可选值为'gongJi'和'faShu'，设置type后只统计该类型的异系牌，不设置则统计所有异系牌
-返回值为数值</p>
-<pre><code class="language-javascript">player.countYiXiPai('gongJi'); //3
+<p>统计异系牌的数量，type可选值为'gongJi'和'faShu'，设置type后只统计该类型的异系牌，不设置则统计所有异系牌</p>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">player.countYiXiPai(&quot;gongJi&quot;); //3
 </code></pre>
 <h3 id="counttongmingpai">countTongMingPai()<a class="headerlink" href="#counttongmingpai" title="Permanent link">⚓︎</a></h3>
-<p>统计同命格牌的数量
-返回值为数值</p>
+<p>统计同命格牌的数量</p>
+<p>返回值为数值</p>
 <pre><code class="language-javascript">player.countTongMingPai(); //4
 </code></pre>
 <h3 id="countyimingpai">countYiMingPai()<a class="headerlink" href="#countyimingpai" title="Permanent link">⚓︎</a></h3>
-<p>统计不同命格牌的数量
-返回值为数值</p>
+<p>统计不同命格牌的数量</p>
+<p>返回值为数值</p>
 <pre><code class="language-javascript">player.countYiMingPai(); //1
 </code></pre>
 <h3 id="countemptycards">countEmptyCards()<a class="headerlink" href="#countemptycards" title="Permanent link">⚓︎</a></h3>
-<p>统计角色还差多少张牌才能达到手牌上限
-返回值为数值</p>
+<p>统计角色还差多少张牌才能达到手牌上限</p>
+<p>返回值为数值</p>
 <pre><code class="language-javascript">player.countEmptyCards(); //2
 </code></pre>
 <h3 id="countemptynengliang">countEmptyNengLiang()<a class="headerlink" href="#countemptynengliang" title="Permanent link">⚓︎</a></h3>
-<p>统计角色还差多少个星石才能达到能量上限
-返回值为数值</p>
+<p>统计角色还差多少个星石才能达到能量上限</p>
+<p>返回值为数值</p>
 <pre><code class="language-javascript">player.countEmptyNengLiang(); //1
 </code></pre>
 <h3 id="countnengliangxingshi">countNengLiang(xingShi)<a class="headerlink" href="#countnengliangxingshi" title="Permanent link">⚓︎</a></h3>
-<p>获取角色当前的某个类型的星石数
-返回值为数值</p>
-<pre><code class="language-javascript">player.countNengLiang('shuiJing'); //2
+<p>获取角色当前的某个类型的星石数</p>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">player.countNengLiang(&quot;shuiJing&quot;); //2
 </code></pre>
 <h3 id="hasnengliangxingshi">hasNengLiang(xingShi)<a class="headerlink" href="#hasnengliangxingshi" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否有某个类型的星石，若无xingShi参数，则判断是否有任意类型的星石
-返回值为布尔值</p>
-<pre><code class="language-javascript">player.hasNengLiang('baoShi'); //false
+<p>判断角色是否有某个类型的星石，若无xingShi参数，则判断是否有任意类型的星石</p>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">player.hasNengLiang(&quot;baoShi&quot;); //false
 </code></pre>
 <h3 id="countnengliangall">countNengLiangAll()<a class="headerlink" href="#countnengliangall" title="Permanent link">⚓︎</a></h3>
-<p>获取角色的所有星石数
-返回值为数值</p>
+<p>获取角色的所有星石数</p>
+<p>返回值为数值</p>
 <pre><code class="language-javascript">player.countNengLiangAll(); //3
 </code></pre>
 <h3 id="countzhishiwuzhishiwu">countZhiShiWu(zhiShiWu)<a class="headerlink" href="#countzhishiwuzhishiwu" title="Permanent link">⚓︎</a></h3>
-<p>获取指示物的数量
-支持参数：
-- 字符串：指示物id
-返回值为数值</p>
-<pre><code class="language-javascript">var num=player.countZhiShiWu('xxx'); //3
+<p>获取指示物的数量</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：指示物id</li>
+</ul>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">var num = player.countZhiShiWu(&quot;xxx&quot;); //3
 </code></pre>
 <h3 id="iszhishiwumaxzhishiwu">isZhiShiWuMax(zhiShiWu)<a class="headerlink" href="#iszhishiwumaxzhishiwu" title="Permanent link">⚓︎</a></h3>
-<p>判断指示物是否到达上限
-支持参数：
-- 字符串：指示物id
-返回值为布尔值</p>
-<pre><code class="language-javascript">var isMax=player.isZhiShiWuMax('xxx'); //false
+<p>判断指示物是否到达上限</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：指示物id</li>
+</ul>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">var isMax = player.isZhiShiWuMax(&quot;xxx&quot;); //false
 </code></pre>
 <h3 id="haszhishiwuzhishiwu">hasZhiShiWu(zhiShiWu)<a class="headerlink" href="#haszhishiwuzhishiwu" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否拥有某个指示物
-支持参数：
-- 字符串：指示物id
-返回值为布尔值</p>
-<pre><code class="language-javascript">var has=player.hasZhiShiWu('xxx'); //false
+<p>判断角色是否拥有某个指示物</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：指示物id</li>
+</ul>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">var has = player.hasZhiShiWu(&quot;xxx&quot;); //false
 </code></pre>
 <h3 id="usedskillskill">usedSkill(skill)<a class="headerlink" href="#usedskillskill" title="Permanent link">⚓︎</a></h3>
-<p>判断角色本回合是否使用过某个技能
-支持参数：
-- 字符串：技能id
-返回值为布尔值</p>
-<pre><code class="language-javascript">var used=player.usedSkill('xxx'); //true
+<p>判断角色本回合是否使用过某个技能</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：技能id</li>
+</ul>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">var used = player.usedSkill(&quot;xxx&quot;); //true
 </code></pre>
 <h3 id="countskillskill">countSkill(skill)<a class="headerlink" href="#countskillskill" title="Permanent link">⚓︎</a></h3>
-<p>统计角色本回合使用某个技能的次数
-支持参数：
-- 字符串：技能id
-返回值为数值</p>
-<pre><code class="language-javascript">var count=player.countSkill('xxx'); //2
+<p>统计角色本回合使用某个技能的次数</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：技能id</li>
+</ul>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">var count = player.countSkill(&quot;xxx&quot;); //2
 </code></pre>
 <h3 id="getgaipaigaintag">getGaiPai(gaintag)<a class="headerlink" href="#getgaipaigaintag" title="Permanent link">⚓︎</a></h3>
-<p>获取角色的某种盖牌
-支持参数：
-- 字符串：盖牌id
-返回值为列表</p>
-<pre><code class="language-javascript">var cards=player.getGaiPai('xxx'); 
+<p>获取角色的某种盖牌</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：盖牌id</li>
+</ul>
+<p>返回值为列表</p>
+<pre><code class="language-javascript">var cards = player.getGaiPai(&quot;xxx&quot;);
 //[card1,card2,card3]
 </code></pre>
 <h3 id="countgaipaigaintag">countGaiPai(gaintag)<a class="headerlink" href="#countgaipaigaintag" title="Permanent link">⚓︎</a></h3>
-<p>统计角色的某种盖牌数量
-支持参数：
-- 字符串：盖牌id
-返回值为数值</p>
-<pre><code class="language-javascript">var count=player.countGaiPai('xxx'); //3
+<p>统计角色的某种盖牌数量</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：盖牌id</li>
+</ul>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">var count = player.countGaiPai(&quot;xxx&quot;); //3
 </code></pre>
 <h3 id="hasgaipaigaintag">hasGaiPai(gaintag)<a class="headerlink" href="#hasgaipaigaintag" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否拥有某种盖牌
-支持参数：
-- 字符串：盖牌id
-返回值为布尔值</p>
-<pre><code class="language-javascript">var has=player.hasGaiPai('xxx'); //true
+<p>判断角色是否拥有某种盖牌</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：盖牌id</li>
+</ul>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">var has = player.hasGaiPai(&quot;xxx&quot;); //true
 </code></pre>
 <h3 id="getjichuxiaoguojichuxiaoguo">getJiChuXiaoGuo(jiChuXiaoGuo)<a class="headerlink" href="#getjichuxiaoguojichuxiaoguo" title="Permanent link">⚓︎</a></h3>
-<p>获取角色某种基础效果的卡牌
-支持参数：
-- jiChuXiaoGuo：字符串，基础效果id
-返回值为列表</p>
-<pre><code class="language-javascript">var result=await player.getJiChuXiaoGuo('_shengDun');
+<p>获取角色某种基础效果的卡牌</p>
+<p>支持参数：</p>
+<ul>
+<li>jiChuXiaoGuo：字符串，基础效果id</li>
+</ul>
+<p>返回值为列表</p>
+<pre><code class="language-javascript">var result = await player.getJiChuXiaoGuo(&quot;_shengDun&quot;);
 //[card1]
 </code></pre>
 <h3 id="countjichuxiaoguojichuxiaoguo">countJiChuXiaoGuo(jiChuXiaoGuo)<a class="headerlink" href="#countjichuxiaoguojichuxiaoguo" title="Permanent link">⚓︎</a></h3>
-<p>统计角色某种基础效果的数量
-支持参数：
-- jiChuXiaoGuo：字符串，基础效果id
-返回值为数值</p>
-<pre><code class="language-javascript">var result=await player.countJiChuXiaoGuo('_shengDun'); //1
+<p>统计角色某种基础效果的数量</p>
+<p>支持参数：</p>
+<ul>
+<li>jiChuXiaoGuo：字符串，基础效果id</li>
+</ul>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">var result = await player.countJiChuXiaoGuo(&quot;_shengDun&quot;); //1
 </code></pre>
 <h3 id="counthong">countHong()<a class="headerlink" href="#counthong" title="Permanent link">⚓︎</a></h3>
-<p>统计角色的红色指示物数量
-返回值为数值</p>
-<pre><code class="language-javascript">var count=player.countHong(); //2
+<p>统计角色的红色指示物数量</p>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">var count = player.countHong(); //2
 </code></pre>
 <h3 id="countlan">countLan()<a class="headerlink" href="#countlan" title="Permanent link">⚓︎</a></h3>
-<p>统计角色的蓝色指示物数量
-返回值为数值</p>
-<pre><code class="language-javascript">var count=player.countLan(); //1
+<p>统计角色的蓝色指示物数量</p>
+<p>返回值为数值</p>
+<pre><code class="language-javascript">var count = player.countLan(); //1
 </code></pre>
 <h3 id="hasskillskillarg2-arg3-arg4">hasSkill(skill,arg2, arg3, arg4)<a class="headerlink" href="#hasskillskillarg2-arg3-arg4" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否拥有某个技能，剩余参数暂未使用
-支持参数：
-- skill：字符串，技能id
-- 布尔值1
-返回值为布尔值</p>
-<pre><code class="language-javascript">var has=player.hasSkill('xxx'); //true
+<p>判断角色是否拥有某个技能，剩余参数暂未使用</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，技能id</li>
+</ul>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">var has = player.hasSkill(&quot;xxx&quot;); //true
 </code></pre>
 <h3 id="addskillskill-checkconflict-nobroadcast-addtoskills">addSkill(skill, checkConflict, nobroadcast, addToSkills)<a class="headerlink" href="#addskillskill-checkconflict-nobroadcast-addtoskills" title="Permanent link">⚓︎</a></h3>
-<p>玩家添加技能
-支持参数：
-- skill：字符串，技能id
-- checkConflict：布尔值，是否检查技能冲突，目前星杯里没实际用途
-- nobroadcast：布尔值，是否不广播技能添加，用于隐藏技能
-- addToSkills：布尔值，是否添加到玩家技能列表</p>
-<pre><code class="language-javascript">player.addSkill('xxx');
+<p>玩家添加技能</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，技能id</li>
+<li>checkConflict：布尔值，是否检查技能冲突，目前星杯里没实际用途</li>
+<li>nobroadcast：布尔值，是否不广播技能添加，用于隐藏技能</li>
+<li>addToSkills：布尔值，是否添加到玩家技能列表</li>
+</ul>
+<pre><code class="language-javascript">player.addSkill(&quot;xxx&quot;);
 </code></pre>
 <h3 id="removeskillskill">removeSkill(skill)<a class="headerlink" href="#removeskillskill" title="Permanent link">⚓︎</a></h3>
-<p>玩家移除技能
-支持参数：
-- 字符串：技能id</p>
-<pre><code class="language-javascript">player.removeSkill('xxx');
+<p>玩家移除技能</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：技能id</li>
+</ul>
+<pre><code class="language-javascript">player.removeSkill(&quot;xxx&quot;);
 </code></pre>
 <h3 id="addtempskillskill-expire-checkconflict">addTempSkill(skill, expire, checkConflict)<a class="headerlink" href="#addtempskillskill-expire-checkconflict" title="Permanent link">⚓︎</a></h3>
-<p>玩家添加临时技能，默认在回合开始/结束时移除
-支持参数：
-- skill：字符串，技能id
-- expire：字符串/字典，移除时机('phaseBegin'，'gongJiEnd',{player:'faShuEnd'}等，和技能时机类似)
-- checkConflict：布尔值，是否检查技能冲突，目前星杯里没实际用途</p>
-<pre><code class="language-javascript">player.addTempSkill('xxx',{player:'teShuEnd'});
+<p>玩家添加临时技能，默认在回合开始/结束时移除</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，技能id</li>
+<li>expire：字符串/字典，移除时机('phaseBegin'，'gongJiEnd',{player:'faShuEnd'}等，和技能时机类似)</li>
+<li>checkConflict：布尔值，是否检查技能冲突，目前星杯里没实际用途</li>
+</ul>
+<pre><code class="language-javascript">player.addTempSkill(&quot;xxx&quot;, { player: &quot;teShuEnd&quot; });
 </code></pre>
 <h3 id="addskilllogskillpopup-true">addSkillLog(skill,popup = true)<a class="headerlink" href="#addskilllogskillpopup-true" title="Permanent link">⚓︎</a></h3>
-<p>玩家添加技能并有日志
-支持参数：
-- skill：字符串，技能id
-- popup：布尔值，玩家是否弹出技能名，和发动技能时的弹出一致，默认为true</p>
-<pre><code class="language-javascript">player.addSkillLog('xxx');
+<p>玩家添加技能并有日志</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，技能id</li>
+<li>popup：布尔值，玩家是否弹出技能名，和发动技能时的弹出一致，默认为true</li>
+</ul>
+<pre><code class="language-javascript">player.addSkillLog(&quot;xxx&quot;);
 </code></pre>
 <h3 id="removeskilllogskill-popup-true">removeSkillLog(skill, popup = true)<a class="headerlink" href="#removeskilllogskill-popup-true" title="Permanent link">⚓︎</a></h3>
-<p>玩家移除技能并有日志
-支持参数：
-- skill：字符串，技能id
-- popup：布尔值，玩家是否弹出技能名，和发动技能时的弹出一致，默认为true</p>
-<pre><code class="language-javascript">player.removeSkillLog('xxx');
+<p>玩家移除技能并有日志</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，技能id</li>
+<li>popup：布尔值，玩家是否弹出技能名，和发动技能时的弹出一致，默认为true</li>
+</ul>
+<pre><code class="language-javascript">player.removeSkillLog(&quot;xxx&quot;);
 </code></pre>
 <h3 id="addadditionalskillskill-skillstoadd-keep">addAdditionalSkill(skill, skillsToAdd, keep)<a class="headerlink" href="#addadditionalskillskill-skillstoadd-keep" title="Permanent link">⚓︎</a></h3>
-<p>玩家添加附加技能
-支持参数：
-- skill：字符串，附加技能存储列表
-- skillsToAdd：字符串/列表，要添加的技能id
-- keep：布尔值，是否保留原有的附加技能，默认为false</p>
-<pre><code class="language-javascript">player.addAdditionalSkill('myExtraSkills','xxx');
+<p>玩家添加附加技能</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，附加技能存储列表</li>
+<li>skillsToAdd：字符串/列表，要添加的技能id</li>
+<li>keep：布尔值，是否保留原有的附加技能，默认为false</li>
+</ul>
+<pre><code class="language-javascript">player.addAdditionalSkill(&quot;myExtraSkills&quot;, &quot;xxx&quot;);
 </code></pre>
 <h3 id="removeadditionalskillskill-target">removeAdditionalSkill(skill, target)<a class="headerlink" href="#removeadditionalskillskill-target" title="Permanent link">⚓︎</a></h3>
-<p>玩家移除附加技能
-支持参数：
-- skill：字符串，附加技能存储列表
-- target：字符串/列表，要移除的技能id</p>
-<pre><code class="language-javascript">player.removeAdditionalSkill('myExtraSkills','xxx');
+<p>玩家移除附加技能</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，附加技能存储列表</li>
+<li>target：字符串/列表，要移除的技能id</li>
+</ul>
+<pre><code class="language-javascript">player.removeAdditionalSkill(&quot;myExtraSkills&quot;, &quot;xxx&quot;);
 </code></pre>
 <h3 id="tempbanskillskill-expire-log">tempBanSkill(skill, expire, log)<a class="headerlink" href="#tempbanskillskill-expire-log" title="Permanent link">⚓︎</a></h3>
-<p>玩家临时封禁技能，默认在回合开始/结束时解封
-支持参数：
-- skill: 字符串，技能id
-- expire: 字符串/字典，解封时机('phaseBegin'，'gongJiEnd',{player:'faShuEnd'}等，和技能时机类似，如果为'forever'则永久封印)
-- log: 布尔值，是否有日志，默认有日志</p>
-<pre><code class="language-javascript">player.tempBanSkill('xxx','forever')
+<p>玩家临时封禁技能，默认在回合开始/结束时解封</p>
+<p>支持参数：</p>
+<ul>
+<li>skill: 字符串，技能id</li>
+<li>expire: 字符串/字典，解封时机('phaseBegin'，'gongJiEnd',{player:'faShuEnd'}等，和技能时机类似，如果为'forever'则永久封印)</li>
+<li>log: 布尔值，是否有日志，默认有日志</li>
+</ul>
+<pre><code class="language-javascript">player.tempBanSkill(&quot;xxx&quot;, &quot;forever&quot;);
 </code></pre>
 <h3 id="istempbannedskill">isTempBanned(skill)<a class="headerlink" href="#istempbannedskill" title="Permanent link">⚓︎</a></h3>
-<p>判断某个技能是否被封印
-支持参数：
-- skill：字符串，技能id
-返回值为布尔值</p>
-<pre><code class="language-javascript">player.isTempBanned('xxx');//true
+<p>判断某个技能是否被封印</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，技能id</li>
+</ul>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">player.isTempBanned(&quot;xxx&quot;); //true
 </code></pre>
 <h3 id="isonline">isOnline()<a class="headerlink" href="#isonline" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否在线并且未托管
-返回值为布尔值</p>
-<pre><code class="language-javascript">var online=player.isOnline(); //true
+<p>判断角色是否在线并且未托管</p>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">var online = player.isOnline(); //true
 </code></pre>
 <h3 id="isonline2">isOnline2()<a class="headerlink" href="#isonline2" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否在线，包含托管状态
-返回值为布尔值</p>
-<pre><code class="language-javascript">var online=player.isOnline2(); //true
+<p>判断角色是否在线，包含托管状态</p>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">var online = player.isOnline2(); //true
 </code></pre>
 <h3 id="isoffline">isOffline()<a class="headerlink" href="#isoffline" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否离线
-返回值为布尔值</p>
-<pre><code class="language-javascript">var offline=player.isOffline(); //false
+<p>判断角色是否离线</p>
+<p>返回值为布尔值</p>
+<pre><code class="language-javascript">var offline = player.isOffline(); //false
 </code></pre>
 <h3 id="canusexingbeicard-target">canUseXingBei(card, target)<a class="headerlink" href="#canusexingbeicard-target" title="Permanent link">⚓︎</a></h3>
-<p>判断角色是否对target使用card
-支持参数
-- card：卡牌
-- target：玩家
-返回值布尔</p>
-<pre><code class="language-javascript">player.canUseXingBei(card,target)//true
+<p>判断角色是否对target使用card</p>
+<p>支持参数</p>
+<ul>
+<li>card：卡牌</li>
+<li>target：玩家</li>
+</ul>
+<p>返回值布尔</p>
+<pre><code class="language-javascript">player.canUseXingBei(card, target); //true
 </code></pre>
 <h3 id="hasusetargetxingbeicard">hasUseTargetXingBei(card)<a class="headerlink" href="#hasusetargetxingbeicard" title="Permanent link">⚓︎</a></h3>
-<p>判断场上是否存在能成为card的目标
-支持参数
-- card：卡牌
-返回值布尔</p>
-<pre><code class="language-javascript">player.hasUseTargetXingBei(card)//true
+<p>判断场上是否存在能成为card的目标</p>
+<p>支持参数</p>
+<ul>
+<li>card：卡牌</li>
+</ul>
+<p>返回值布尔</p>
+<pre><code class="language-javascript">player.hasUseTargetXingBei(card); //true
 </code></pre>
 <h3 id="_3">以下函数请参加函数源码<a class="headerlink" href="#_3" title="Permanent link">⚓︎</a></h3>
-<p>因使用较少，本文档暂不详细说明，且都可存在明显等价替代方法
-文件路径：noname/library/element/player.js</p>
+<p>因使用较少，本文档暂不详细说明，且都可存在明显等价替代方法</p>
+<p>文件路径：noname/library/element/player.js</p>
 <h3 id="getroundhistory">getRoundHistory()<a class="headerlink" href="#getroundhistory" title="Permanent link">⚓︎</a></h3>
 <h3 id="gethistory">getHistory()<a class="headerlink" href="#gethistory" title="Permanent link">⚓︎</a></h3>
 <h3 id="checkhistory">checkHistory()<a class="headerlink" href="#checkhistory" title="Permanent link">⚓︎</a></h3>
@@ -3993,19 +4041,23 @@ player.canXingDong('faShu'); //false
 <h3 id="getstat">getStat()<a class="headerlink" href="#getstat" title="Permanent link">⚓︎</a></h3>
 <h3 id="getlaststat">getLastStat()<a class="headerlink" href="#getlaststat" title="Permanent link">⚓︎</a></h3>
 <h3 id="setstoragename-value-mark">setStorage(name, value, mark)<a class="headerlink" href="#setstoragename-value-mark" title="Permanent link">⚓︎</a></h3>
-<p>设置角色的存储数据，等价于player.storage[name]=value
-支持参数：
-- name：字符串，存储名称
-- value：任意，存储值
-- mark：布尔值，是否显示标记，默认为不显示</p>
-<pre><code class="language-javascript">player.setStorage('myKey', 'myValue');
+<p>设置角色的存储数据，等价于player.storage[name]=value</p>
+<p>支持参数：</p>
+<ul>
+<li>name：字符串，存储名称</li>
+<li>value：任意，存储值</li>
+<li>mark：布尔值，是否显示标记，默认为不显示</li>
+</ul>
+<pre><code class="language-javascript">player.setStorage(&quot;myKey&quot;, &quot;myValue&quot;);
 </code></pre>
 <h3 id="getstoragename-defaultvalue">getStorage(name, defaultValue = [])<a class="headerlink" href="#getstoragename-defaultvalue" title="Permanent link">⚓︎</a></h3>
-<p>获取玩家的存储数据，等价于player.storage[name]
-支持参数：
-- name：字符串，存储名称
-- defaultValue：任意，默认为空列表，当存储值未定义时返回该值</p>
-<pre><code class="language-javascript">var value=player.getStorage('myKey'); //'myValue'
+<p>获取玩家的存储数据，等价于player.storage[name]</p>
+<p>支持参数：</p>
+<ul>
+<li>name：字符串，存储名称</li>
+<li>defaultValue：任意，默认为空列表，当存储值未定义时返回该值</li>
+</ul>
+<pre><code class="language-javascript">var value = player.getStorage(&quot;myKey&quot;); //'myValue'
 </code></pre>
 <h3 id="hasstorageany">hasStorageAny()<a class="headerlink" href="#hasstorageany" title="Permanent link">⚓︎</a></h3>
 <h3 id="hasstorageall">hasStorageAll()<a class="headerlink" href="#hasstorageall" title="Permanent link">⚓︎</a></h3>
@@ -4014,15 +4066,15 @@ player.canXingDong('faShu'); //false
 <h3 id="updatestorageasync">updateStorageAsync()<a class="headerlink" href="#updatestorageasync" title="Permanent link">⚓︎</a></h3>
 <h3 id="removestorage">removeStorage()<a class="headerlink" href="#removestorage" title="Permanent link">⚓︎</a></h3>
 <h2 id="_4">事件函数<a class="headerlink" href="#_4" title="Permanent link">⚓︎</a></h2>
-<p>多数返回值为事件，极少无返回值
-本页面中带NoTrigger标记的的函数无Before/Begin/End/After时机触发器
-部分函数有高级使用方法，本文档暂不会涉及，使用可参考技能源码或者查看函数定义
-针对选择函数的ai行为，本文档暂不会过多讲解，使用可参考技能源码
-参数列表中某些类别的参数分1，2，这些参数有前后顺序要求，第一个被传入的这类参数就被用为参数1，依次类推
-事件函数可用set()函数设置特定属性，部分函数通过传参只能传入部分参数，可以用set()设置其他参数
-选择函数在异步函数中使用时，需使用await关键字等待选择结果返回，并且使用forResult()函数获取结果
-事件函数的具体执行过程参见文件：noname/library/element/content.js</p>
-<pre><code class="language-javascript">let result = await player.chooseToDiscard(2,'h').forResult();
+<p>多数返回值为事件，极少无返回值</p>
+<p>本页面中带NoTrigger标记的的函数无Before/Begin/End/After时机触发器</p>
+<p>部分函数有高级使用方法，本文档暂不会涉及，使用可参考技能源码或者查看函数定义</p>
+<p>针对选择函数的ai行为，本文档暂不会过多讲解，使用可参考技能源码</p>
+<p>参数列表中某些类别的参数分1，2，这些参数有前后顺序要求，第一个被传入的这类参数就被用为参数1，依次类推</p>
+<p>事件函数可用set()函数设置特定属性，部分函数通过传参只能传入部分参数，可以用set()设置其他参数</p>
+<p>选择函数在异步函数中使用时，需使用await关键字等待选择结果返回，并且使用forResult()函数获取结果</p>
+<p>事件函数的具体执行过程参见文件：noname/library/element/content.js</p>
+<pre><code class="language-javascript">let result = await player.chooseToDiscard(2, &quot;h&quot;).forResult();
 /*
 result = {
     bool: true, //是否选择了弃牌
@@ -4040,27 +4092,40 @@ forResultLinks()
 */
 </code></pre>
 <h3 id="reinitcharacterfrom-to-log-true">reinitCharacter(from, to, log = true)<a class="headerlink" href="#reinitcharacterfrom-to-log-true" title="Permanent link">⚓︎</a></h3>
-<p>玩家重新初始化角色
-支持参数
-- from：字符串，原角色id
-- to：字符串，新角色id
-- log：布尔值，是否有日志，默认为true</p>
-<pre><code class="language-javascript">player.reinitCharacter('zhuLvZhe','hongYiZhuJiao');
+<p>玩家重新初始化角色</p>
+<p>支持参数</p>
+<ul>
+<li>from：字符串，原角色id</li>
+<li>to：字符串，新角色id</li>
+<li>log：布尔值，是否有日志，默认为true</li>
+</ul>
+<pre><code class="language-javascript">player.reinitCharacter(&quot;zhuLvZhe&quot;, &quot;hongYiZhuJiao&quot;);
 </code></pre>
 <h3 id="choosetodiscard">chooseToDiscard()<a class="headerlink" href="#choosetodiscard" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择弃牌
-支持参数
-- 数值/范围列表(弃牌数/范围，2,[1,2],弃2张、弃1~2张)-
-- 位置字符串('h'，星杯里目前就h有用)、布尔值(是否必须弃牌)-
-- 函数1(卡牌过滤器、function(card)返回值为true则可以选择)
-- 函数2(ai)、字典(可代替函数1来删选牌、{xiBie:'shui'})
-- 字符串('showCards','showHiddenCards'，提示文本，前两个为展示弃牌，第一个展示触发封印师封印，第二个不触发封印；提示文本任意，会在选择弃牌弹窗中显示)</p>
-<pre><code class="language-javascript">'step 0' 
-player.chooseToDiscard([1,2],'h',true,card=&gt;get.mingGe(card)=='xue','showCards','测试技能：弃置1到2张血命格手牌').set('ai',(card)=&gt;{
-    return 10-get.value(card);//优先弃掉价值低的牌，返回值为本卡牌的选择优先级
-});
+<p>玩家选择弃牌</p>
+<p>支持参数</p>
+<ul>
+<li>数值/范围列表(弃牌数/范围，2,[1,2],弃2张、弃1~2张)-</li>
+<li>位置字符串('h'，星杯里目前就h有用)、布尔值(是否必须弃牌)-</li>
+<li>函数1(卡牌过滤器、function(card)返回值为true则可以选择)</li>
+<li>函数2(ai)、字典(可代替函数1来删选牌、{xiBie:'shui'})</li>
+<li>字符串('showCards','showHiddenCards'，提示文本，前两个为展示弃牌，第一个展示触发封印师封印，第二个不触发封印；提示文本任意，会在选择弃牌弹窗中显示)</li>
+</ul>
+<pre><code class="language-javascript">&quot;step 0&quot;;
+player
+  .chooseToDiscard(
+    [1, 2],
+    &quot;h&quot;,
+    true,
+    (card) =&gt; get.mingGe(card) == &quot;xue&quot;,
+    &quot;showCards&quot;,
+    &quot;测试技能：弃置1到2张血命格手牌&quot;,
+  )
+  .set(&quot;ai&quot;, (card) =&gt; {
+    return 10 - get.value(card); //优先弃掉价值低的牌，返回值为本卡牌的选择优先级
+  });
 //玩家必须弃掉1到2张血命格手牌，并且弃牌展示，ai优先弃掉价值低的牌，弹窗为&quot;测试技能：弃置1到2张血命格手牌&quot;
-'step 1'
+(&quot;step 1&quot;);
 console.log(result); //玩家弃掉的牌
 /*
 result = {
@@ -4070,18 +4135,28 @@ result = {
 */
 </code></pre>
 <h3 id="choosecard">chooseCard()<a class="headerlink" href="#choosecard" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择弃牌
-支持参数
-- 数值/范围列表(选择牌数/范围，2,[1,2],弃2张、弃1~2张)
-- 位置字符串('h'，星杯里目前就h有用)、布尔值(是否必须选择)
-- 函数1(卡牌过滤器、function(card)返回值为true则可以选择)
-- 函数2(ai)、字典(可代替函数1来删选牌、{xiBie:'shui'})、字符串(提示文本，提示文本任意，会在选择弃牌弹窗中显示)</p>
-<pre><code class="language-javascript">var result=await player.chooseCard(2,'h',card=&gt;get.xiBie(card)=='huo','测试技能：选择2张火系手牌').set('ai',(card)=&gt;{
-    if(_status.event.player.countCards('h',card=&gt;get.xiBie(card))&gt;2){
-        return 10-get.value(card);
-    }else return 0;
+<p>玩家选择弃牌</p>
+<p>支持参数</p>
+<ul>
+<li>数值/范围列表(选择牌数/范围，2,[1,2],弃2张、弃1~2张)</li>
+<li>位置字符串('h'，星杯里目前就h有用)、布尔值(是否必须选择)</li>
+<li>函数1(卡牌过滤器、function(card)返回值为true则可以选择)</li>
+<li>函数2(ai)、字典(可代替函数1来删选牌、{xiBie:'shui'})、字符串(提示文本，提示文本任意，会在选择弃牌弹窗中显示)</li>
+</ul>
+<pre><code class="language-javascript">var result = await player
+  .chooseCard(
+    2,
+    &quot;h&quot;,
+    (card) =&gt; get.xiBie(card) == &quot;huo&quot;,
+    &quot;测试技能：选择2张火系手牌&quot;,
+  )
+  .set(&quot;ai&quot;, (card) =&gt; {
+    if (_status.event.player.countCards(&quot;h&quot;, (card) =&gt; get.xiBie(card)) &gt; 2) {
+      return 10 - get.value(card);
+    } else return 0;
     //如果手中火系牌数大于2，则选择，否则不选择
-}).forResult();
+  })
+  .forResult();
 //玩家选择1到2张火系手牌，弹窗为&quot;测试技能：选择2张火系手牌&quot;
 
 console.log(result); //玩家弃掉的牌
@@ -4093,15 +4168,25 @@ result = {
 */
 </code></pre>
 <h3 id="choosetarget">chooseTarget()<a class="headerlink" href="#choosetarget" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择目标
-支持参数
-- 数值/范围列表(选择目标数/范围，2,[1,2],选2个、选1~2个)-
-- 布尔值(是否必须选择)
-- 函数1(目标过滤器、function(target)返回值为true则可以选择)
-- 函数2(ai)、字符串(提示文本，提示文本任意，会在选择目标弹窗中显示)</p>
-<pre><code class="language-javascript">var result=await player.chooseTarget(1,true,lib.filter.opponent,'测试技能：选择1个目标对手弃1张牌').set('ai',(target)=&gt;{
-    return target.countCards('h'); //优先选择手牌数多的目标
-}).forResult();
+<p>玩家选择目标</p>
+<p>支持参数</p>
+<ul>
+<li>数值/范围列表(选择目标数/范围，2,[1,2],选2个、选1~2个)-</li>
+<li>布尔值(是否必须选择)</li>
+<li>函数1(目标过滤器、function(target)返回值为true则可以选择)</li>
+<li>函数2(ai)、字符串(提示文本，提示文本任意，会在选择目标弹窗中显示)</li>
+</ul>
+<pre><code class="language-javascript">var result = await player
+  .chooseTarget(
+    1,
+    true,
+    lib.filter.opponent,
+    &quot;测试技能：选择1个目标对手弃1张牌&quot;,
+  )
+  .set(&quot;ai&quot;, (target) =&gt; {
+    return target.countCards(&quot;h&quot;); //优先选择手牌数多的目标
+  })
+  .forResult();
 
 console.log(result); //玩家选择的目标
 /*
@@ -4112,23 +4197,27 @@ result = {
 */
 </code></pre>
 <h3 id="choosecardtargetchoose">chooseCardTarget(choose)<a class="headerlink" href="#choosecardtargetchoose" title="Permanent link">⚓︎</a></h3>
-<p>玩家同时选择卡牌和目标
-choose为一个字典，多使用以下键名：
-- filterCard：卡牌过滤器，function(card)，未设置则默认全部可选
-- filterTarget：目标过滤器，function(target,player,card)，未设置则默认全部可选
-- selectCard：选择卡牌数/范围，数值/范围列表，2,[1,2]，未设置默认为1
-- selectTarget：选择目标数/范围，数值/范围列表，2,[1,2]，未设置默认为1
-- ai1：卡牌ai，function(card)，未设置默认为使用价值
-- ai2: 目标ai，function(target)，未设置默认优先友方
-- 布尔值(是否必须选择)</p>
-<pre><code class="language-javascript">var result=await player.chooseCardTarget({
-    filterCard:card=&gt;get.xiBie(card)=='shui',
-    filterTarget:target=&gt;target!=player,
-    selectCard:[1,2],
-    selectTarget:1,
-    ai1:card=&gt;10-get.value(card),
-    ai2:target=&gt;10-target.countCards('h'),
-}).forResult();
+<p>玩家同时选择卡牌和目标</p>
+<p>choose为一个字典，多使用以下键名：</p>
+<ul>
+<li>filterCard：卡牌过滤器，function(card)，未设置则默认全部可选</li>
+<li>filterTarget：目标过滤器，function(target,player,card)，未设置则默认全部可选</li>
+<li>selectCard：选择卡牌数/范围，数值/范围列表，2,[1,2]，未设置默认为1</li>
+<li>selectTarget：选择目标数/范围，数值/范围列表，2,[1,2]，未设置默认为1</li>
+<li>ai1：卡牌ai，function(card)，未设置默认为使用价值</li>
+<li>ai2: 目标ai，function(target)，未设置默认优先友方</li>
+<li>布尔值(是否必须选择)</li>
+</ul>
+<pre><code class="language-javascript">var result = await player
+  .chooseCardTarget({
+    filterCard: (card) =&gt; get.xiBie(card) == &quot;shui&quot;,
+    filterTarget: (target) =&gt; target != player,
+    selectCard: [1, 2],
+    selectTarget: 1,
+    ai1: (card) =&gt; 10 - get.value(card),
+    ai2: (target) =&gt; 10 - target.countCards(&quot;h&quot;),
+  })
+  .forResult();
 console.log(result); //玩家选择的卡牌和目标
 /*
 result = {
@@ -4139,13 +4228,18 @@ result = {
 */
 </code></pre>
 <h3 id="choosecontrol">chooseControl()<a class="headerlink" href="#choosecontrol" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择选项
-支持参数
-- 列表(选项列表，['选项1','选项2','选项3'])
-- 字符串(增加到选项列表中)
-- 函数(ai，function(event,player)，返回数值则使用列表对应索引的值，返回字符串则作为选择结果)
-- 数值(默认为0，若无ai参数，则ai选择该索引的选项)</p>
-<pre><code class="language-javascript">var result=await player.chooseControl(['选项A','选项B'],1).set('prompt','测试技能：请选择一个选项').forResult();//ai优先选择选项B
+<p>玩家选择选项</p>
+<p>支持参数</p>
+<ul>
+<li>列表(选项列表，['选项1','选项2','选项3'])</li>
+<li>字符串(增加到选项列表中)</li>
+<li>函数(ai，function(event,player)，返回数值则使用列表对应索引的值，返回字符串则作为选择结果)</li>
+<li>数值(默认为0，若无ai参数，则ai选择该索引的选项)</li>
+</ul>
+<pre><code class="language-javascript">var result = await player
+  .chooseControl([&quot;选项A&quot;, &quot;选项B&quot;], 1)
+  .set(&quot;prompt&quot;, &quot;测试技能：请选择一个选项&quot;)
+  .forResult(); //ai优先选择选项B
 
 console.log(result); //玩家选择的选项
 /*
@@ -4153,20 +4247,26 @@ result = {
     control: '选项B' //选择的选项
 }
 */
-
 </code></pre>
 <h3 id="choosecontrollist">chooseControlList()<a class="headerlink" href="#choosecontrollist" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择列表中的一个选项，根据了列表长度生成选项(选项1、选项2)
-支持参数
-- 列表(选项列表，['获得1水晶','战绩区增加1宝石'])
-- 字符串(提示文本，提示文本任意，会在选择弹窗中显示)
-- 函数(ai，function(event,player)，返回数值则使用列表对应索引的值，返回字符串则作为选择结果)
-- 布尔值(是否必须选择，默认为false，会在选项里增加"cancel2"(取消)选项)</p>
-<pre><code class="language-javascript">var list = ['获得1水晶','战绩区增加1宝石'];
-var result=await player.chooseControlList(list).set('ai',(event,player)=&gt;{
-    if(get.zhanJi(player.side).length&gt;3) return '选项一'//根据玩家阵营的战绩区星石数量判断选项
-    else return '选项二'
-}).set('prompt','测试技能：请选择一个选项').forResult();
+<p>玩家选择列表中的一个选项，根据了列表长度生成选项(选项1、选项2)</p>
+<p>支持参数</p>
+<ul>
+<li>列表(选项列表，['获得1水晶','战绩区增加1宝石'])</li>
+<li>字符串(提示文本，提示文本任意，会在选择弹窗中显示)</li>
+<li>函数(ai，function(event,player)，返回数值则使用列表对应索引的值，返回字符串则作为选择结果)</li>
+<li>布尔值(是否必须选择，默认为false，会在选项里增加"cancel2"(取消)选项)</li>
+</ul>
+<pre><code class="language-javascript">var list = [&quot;获得1水晶&quot;, &quot;战绩区增加1宝石&quot;];
+var result = await player
+  .chooseControlList(list)
+  .set(&quot;ai&quot;, (event, player) =&gt; {
+    if (get.zhanJi(player.side).length &gt; 3)
+      return &quot;选项一&quot;; //根据玩家阵营的战绩区星石数量判断选项
+    else return &quot;选项二&quot;;
+  })
+  .set(&quot;prompt&quot;, &quot;测试技能：请选择一个选项&quot;)
+  .forResult();
 
 console.log(result); //玩家选择的选项
 /*
@@ -4174,41 +4274,44 @@ result = {
     control: '选项二' //选择的选项
 }
 */
-
 </code></pre>
 <h3 id="choosebutton">chooseButton()<a class="headerlink" href="#choosebutton" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择按钮
-支持参数
-- 布尔值1(是否必须选择)
-- 布尔值2(是否是复杂选择，如果为true，则每次选择后会再次使用函数1筛选，默认为false)
-- 数值/范围列表(选择按钮数/范围，2,[1,2],选2个、选1~2个)
-- 函数1(按钮过滤器、function(button)返回值为true则可以选择)
-- 函数2(ai，function(button)，返回值要为数值，为每个按钮选择优先级)
-- 列表(按钮列表，[提示文本,[列表,创建样式字符串]]，['提示文本',[list,'tdnodes']])
-    - 样式字符有以下，创建时，列表内变量类型要和样式对应
-    - tdnodes：常用类型，可用于显示文本和数值
-    - card：显示卡牌
-    - blank：和card类似，但显示为牌背
-    - vcard：显示虚拟牌
-    - character：显示角色
-    - characterx：显示角色（可切换为同名角色）
-    - player：显示玩家
-    - text：显示文本</p>
-<pre><code class="language-javascript">var list=get.zhanJi(player.side);//['baoShi','shuiJing','shuiJing']
-var listx=[];
-for(var i=0;i&lt;list.length;i++){
-    listx.push([list[i],get.translation(list[i])]);
-};//[['baoShi','宝石'],['shuiJing','水晶'],['shuiJing','水晶']]
+<p>玩家选择按钮</p>
+<p>支持参数</p>
+<ul>
+<li>布尔值1(是否必须选择)</li>
+<li>布尔值2(是否是复杂选择，如果为true，则每次选择后会再次使用函数1筛选，默认为false)</li>
+<li>数值/范围列表(选择按钮数/范围，2,[1,2],选2个、选1~2个)</li>
+<li>函数1(按钮过滤器、function(button)返回值为true则可以选择)</li>
+<li>函数2(ai，function(button)，返回值要为数值，为每个按钮选择优先级)</li>
+<li>列表(按钮列表，[提示文本,[列表,创建样式字符串]]，['提示文本',[list,'tdnodes']])</li>
+<li>样式字符有以下，创建时，列表内变量类型要和样式对应</li>
+<li>tdnodes：常用类型，可用于显示文本和数值</li>
+<li>card：显示卡牌</li>
+<li>blank：和card类似，但显示为牌背</li>
+<li>vcard：显示虚拟牌</li>
+<li>character：显示角色</li>
+<li>characterx：显示角色（可切换为同名角色）</li>
+<li>player：显示玩家</li>
+<li>text：显示文本</li>
+</ul>
+<pre><code class="language-javascript">var list = get.zhanJi(player.side); //['baoShi','shuiJing','shuiJing']
+var listx = [];
+for (var i = 0; i &lt; list.length; i++) {
+  listx.push([list[i], get.translation(list[i])]);
+} //[['baoShi','宝石'],['shuiJing','水晶'],['shuiJing','水晶']]
 //列表中的翻译将用于显示，实际返回值为前面的字符串
-var next=player.chooseButton([
-    '选择移除的星石',
-    [listx,'tdnodes'],
-],true,[1,2]);
-next.set('ai',(button)=&gt;{
-    if(button.link=='shuiJing') return 10; //优先选择水晶
-    else return 1;
+var next = player.chooseButton(
+  [&quot;选择移除的星石&quot;, [listx, &quot;tdnodes&quot;]],
+  true,
+  [1, 2],
+);
+next.set(&quot;ai&quot;, (button) =&gt; {
+  if (button.link == &quot;shuiJing&quot;)
+    return 10; //优先选择水晶
+  else return 1;
 });
-var result=await next.forResult();
+var result = await next.forResult();
 
 console.log(result); //玩家选择的按钮
 /*
@@ -4219,14 +4322,20 @@ result = {
 */
 </code></pre>
 <h3 id="choosecardbutton">chooseCardButton()<a class="headerlink" href="#choosecardbutton" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择卡牌按钮
-支持参数
-- 卡牌列表
-- 布尔值(是否必须选择)
-- 字符串(提示文本)
-- 数值/范围列表(选择按钮数/范围，2,[1,2],选2个、选1~2个)</p>
-<pre><code class="language-javascript">var cards=player.getGaiPai('xxx');
-var result=await player.chooseCardButton(cards,2,'测试技能：是否移除2张【xxx】');
+<p>玩家选择卡牌按钮</p>
+<p>支持参数</p>
+<ul>
+<li>卡牌列表</li>
+<li>布尔值(是否必须选择)</li>
+<li>字符串(提示文本)</li>
+<li>数值/范围列表(选择按钮数/范围，2,[1,2],选2个、选1~2个)</li>
+</ul>
+<pre><code class="language-javascript">var cards = player.getGaiPai(&quot;xxx&quot;);
+var result = await player.chooseCardButton(
+  cards,
+  2,
+  &quot;测试技能：是否移除2张【xxx】&quot;,
+);
 
 console.log(result);
 /*
@@ -4237,35 +4346,39 @@ result = {
 */
 </code></pre>
 <h3 id="choosebuttontargetchoose">chooseButtonTarget(choose)<a class="headerlink" href="#choosebuttontargetchoose" title="Permanent link">⚓︎</a></h3>
-<p>玩家同时选择按钮和目标
-choose为一个字典，多使用以下键名：
-- createDialog：同chooseButton里参数列表
-- filterButton：按钮过滤器，function(button)，未设置则默认全部可选
-- filterTarget：目标过滤器，function(target,player,card)，未设置则默认全部可选
-- selectButton：选择按钮数/范围，数值/范围列表，2,[1,2]，未设置默认为1
-- selectTarget：选择目标数/范围，数值/范围列表，2,[1,2]，未设置默认为1
-- ai1：按钮ai，function(button)，未设置所有按钮优先级默认为1
-- ai2：目标ai，function(target)，未设置默认优先友方</p>
-<pre><code class="language-javascript">var list=get.zhanJi(player.side);
-var listx=[];
-for(var i=0;i&lt;list.length;i++){
-    listx.push([list[i],get.translation(list[i])]);
+<p>玩家同时选择按钮和目标</p>
+<p>choose为一个字典，多使用以下键名：</p>
+<ul>
+<li>createDialog：同chooseButton里参数列表</li>
+<li>filterButton：按钮过滤器，function(button)，未设置则默认全部可选</li>
+<li>filterTarget：目标过滤器，function(target,player,card)，未设置则默认全部可选</li>
+<li>selectButton：选择按钮数/范围，数值/范围列表，2,[1,2]，未设置默认为1</li>
+<li>selectTarget：选择目标数/范围，数值/范围列表，2,[1,2]，未设置默认为1</li>
+<li>ai1：按钮ai，function(button)，未设置所有按钮优先级默认为1</li>
+<li>ai2：目标ai，function(target)，未设置默认优先友方</li>
+</ul>
+<pre><code class="language-javascript">var list = get.zhanJi(player.side);
+var listx = [];
+for (var i = 0; i &lt; list.length; i++) {
+  listx.push([list[i], get.translation(list[i])]);
 }
 
-let result=await player.chooseButtonTarget({
-    createDialog:[
-        '是否移除1个星石将一名其他角色手牌调整为4张[强制]',
-        [listx,'tdnodes'],
+let result = await player
+  .chooseButtonTarget({
+    createDialog: [
+      &quot;是否移除1个星石将一名其他角色手牌调整为4张[强制]&quot;,
+      [listx, &quot;tdnodes&quot;],
     ],
-    filterTarget:lib.filter.notMe,
-    ai1:function(button){
-        return -1;
+    filterTarget: lib.filter.notMe,
+    ai1: function (button) {
+      return -1;
     },
-    ai2:function(target){
-        if(target.countCards('h')==4) return -1;
-        return Math.random();
+    ai2: function (target) {
+      if (target.countCards(&quot;h&quot;) == 4) return -1;
+      return Math.random();
     },
-}).forResult();
+  })
+  .forResult();
 
 console.log(result);
 /*
@@ -4277,27 +4390,31 @@ result = {
 */
 </code></pre>
 <h3 id="choosebuttoncard">chooseButtonCard()<a class="headerlink" href="#choosebuttoncard" title="Permanent link">⚓︎</a></h3>
-<p>玩家同时选择按钮和卡牌，暂无技能使用
-choose为一个字典，多使用以下键名：
-- createDialog：同chooseButton里参数列表
-- filterButton：按钮过滤器，function(button)，未设置则默认全部可选
-- filterCard：卡牌过滤器，function(card)，未设置则默认全部可选
-- selectButton：选择按钮数/范围，数值/范围列表，2,[1,2]，未设置默认为1
-- selectCard：选择按钮数/范围，数值/范围列表，2,[1,2]，未设置默认为1
-- ai1：目标选择ai
-- ai2：选择卡牌ai</p>
-<pre><code class="language-javascript">let result=await player.chooseButtonCard({
-    createDialog:[
-        '移除1个星石和弃置1张手牌',
-        [['baoShi','宝石'],['shuiJing','水晶'],'tdnodes'],
+<p>玩家同时选择按钮和卡牌，暂无技能使用</p>
+<p>choose为一个字典，多使用以下键名：</p>
+<ul>
+<li>createDialog：同chooseButton里参数列表</li>
+<li>filterButton：按钮过滤器，function(button)，未设置则默认全部可选</li>
+<li>filterCard：卡牌过滤器，function(card)，未设置则默认全部可选</li>
+<li>selectButton：选择按钮数/范围，数值/范围列表，2,[1,2]，未设置默认为1</li>
+<li>selectCard：选择按钮数/范围，数值/范围列表，2,[1,2]，未设置默认为1</li>
+<li>ai1：目标选择ai</li>
+<li>ai2：选择卡牌ai</li>
+</ul>
+<pre><code class="language-javascript">let result = await player
+  .chooseButtonCard({
+    createDialog: [
+      &quot;移除1个星石和弃置1张手牌&quot;,
+      [[&quot;baoShi&quot;, &quot;宝石&quot;], [&quot;shuiJing&quot;, &quot;水晶&quot;], &quot;tdnodes&quot;],
     ],
-    ai1:function(button){
-        return -1;
+    ai1: function (button) {
+      return -1;
     },
-    ai2:function(card){
-        return -get.value(card);
+    ai2: function (card) {
+      return -get.value(card);
     },
-}).forResult();
+  })
+  .forResult();
 
 console.log(result);
 /*
@@ -4309,11 +4426,13 @@ result = {
 */
 </code></pre>
 <h3 id="choosedrawnumbool">chooseDraw(num,bool)<a class="headerlink" href="#choosedrawnumbool" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择摸一定数量牌
-支持参数：
-- num：最多摸几张，默认为1
-- bool：是否包含中间的数值</p>
-<pre><code class="language-javascript">var result=await player.chooseDraw(4,true).forResult;
+<p>玩家选择摸一定数量牌</p>
+<p>支持参数：</p>
+<ul>
+<li>num：最多摸几张，默认为1</li>
+<li>bool：是否包含中间的数值</li>
+</ul>
+<pre><code class="language-javascript">var result = await player.chooseDraw(4, true).forResult;
 
 console.log(result);
 /*
@@ -4323,120 +4442,146 @@ result={
 */
 </code></pre>
 <h3 id="choosetogive">chooseToGive()<a class="headerlink" href="#choosetogive" title="Permanent link">⚓︎</a></h3>
-<p>玩家选择给予牌
-支持参数：
-- 玩家：接受牌的玩家
-- 数值/范围列表：给予牌数/范围，2,[1,2],给2张、给1~2张
-- 布尔值：是否必须给予
-- 函数1：卡牌过滤器、function(card)返回值为true则可以选择
-- 函数2：ai
-- 字典：可代替函数1来删选牌，{xiBie:'shui'}</p>
+<p>玩家选择给予牌</p>
+<p>支持参数：</p>
+<ul>
+<li>玩家：接受牌的玩家</li>
+<li>数值/范围列表：给予牌数/范围，2,[1,2],给2张、给1~2张</li>
+<li>布尔值：是否必须给予</li>
+<li>函数1：卡牌过滤器、function(card)返回值为true则可以选择</li>
+<li>函数2：ai</li>
+<li>字典：可代替函数1来删选牌，{xiBie:'shui'}</li>
+</ul>
 <h3 id="discard">discard()<a class="headerlink" href="#discard" title="Permanent link">⚓︎</a></h3>
-<p>玩家弃置牌，可set('sheQi',true)则无弃牌(dicard)触发器，也被常用于弃置盖牌和基础效果
-支持参数：
-- player：弃牌来源，默认无需设置
-- cards/card：弃置的牌，单张或多张
-- position：弃置去向(ui.ordering(处理区))，默认无需设置
-- 字符串：('showCards','showHiddenCards',盖牌id)，前两个展示牌，前者触发封印，后者不触发，盖牌id用于弃置盖牌时显示日志用</p>
-<pre><code class="language-javascript">var cards=player.getGaiPia('xxx')
-player.discard(cards,'xxx');
+<p>玩家弃置牌，可set('sheQi',true)则无弃牌(dicard)触发器，也被常用于弃置盖牌和基础效果</p>
+<p>支持参数：</p>
+<ul>
+<li>player：弃牌来源，默认无需设置</li>
+<li>cards/card：弃置的牌，单张或多张</li>
+<li>position：弃置去向(ui.ordering(处理区))，默认无需设置</li>
+<li>字符串：('showCards','showHiddenCards',盖牌id)，前两个展示牌，前者触发封印，后者不触发，盖牌id用于弃置盖牌时显示日志用</li>
+</ul>
+<pre><code class="language-javascript">var cards = player.getGaiPia(&quot;xxx&quot;);
+player.discard(cards, &quot;xxx&quot;);
 //日志：xx玩家弃置了x张【xxx】
 </code></pre>
 <h3 id="randomdiscard">randomDiscard()<a class="headerlink" href="#randomdiscard" title="Permanent link">⚓︎</a></h3>
-<p>玩家随机弃置牌，暂无技能使用
-支持参数：
-- 数值：弃置数量</p>
+<p>玩家随机弃置牌，暂无技能使用</p>
+<p>支持参数：</p>
+<ul>
+<li>数值：弃置数量</li>
+</ul>
 <pre><code class="language-javascript">player.randomDiscard(2);
 </code></pre>
 <h3 id="lose">lose()<a class="headerlink" href="#lose" title="Permanent link">⚓︎</a></h3>
-<p>玩家失去牌，可set('sheQi',true)则无弃牌(dicard)触发器
-支持参数：
-- player：弃牌来源，默认无需设置
-- cards/card：弃置的牌，单张或多张
-- position：弃置去向(ui.ordering(处理区))，默认无需设置</p>
-<pre><code class="language-javascript">await player.lose(cards,ui.ordering);
+<p>玩家失去牌，可set('sheQi',true)则无弃牌(dicard)触发器</p>
+<p>支持参数：</p>
+<ul>
+<li>player：弃牌来源，默认无需设置</li>
+<li>cards/card：弃置的牌，单张或多张</li>
+<li>position：弃置去向(ui.ordering(处理区))，默认无需设置</li>
+</ul>
+<pre><code class="language-javascript">await player.lose(cards, ui.ordering);
 //卡牌进临时区，用于后续技能处理
 </code></pre>
 <h3 id="draw">draw()<a class="headerlink" href="#draw" title="Permanent link">⚓︎</a></h3>
-<p>玩家摸牌，部分参数未列出
-支持参数：
-- 数值：摸牌数量，默认为1
-- 玩家：导致摸牌来源，根据需要设置
-- 布尔值：牌面是否可见</p>
+<p>玩家摸牌，部分参数未列出</p>
+<p>支持参数：</p>
+<ul>
+<li>数值：摸牌数量，默认为1</li>
+<li>玩家：导致摸牌来源，根据需要设置</li>
+<li>布尔值：牌面是否可见</li>
+</ul>
 <pre><code class="language-javascript">player.draw(3); //摸3张牌
 </code></pre>
 <h3 id="drawtonumarg">drawTo(num,arg)<a class="headerlink" href="#drawtonumarg" title="Permanent link">⚓︎</a></h3>
-<p>玩家摸牌直到手牌数达到num
-支持参数：
-- num：手牌数
-- arg：参数列表，用于设置draw函数</p>
+<p>玩家摸牌直到手牌数达到num</p>
+<p>支持参数：</p>
+<ul>
+<li>num：手牌数</li>
+<li>arg：参数列表，用于设置draw函数</li>
+</ul>
 <pre><code class="language-javascript">player.drawTo(5); //摸牌直到手牌数达到5
 </code></pre>
 <h3 id="gain">gain()<a class="headerlink" href="#gain" title="Permanent link">⚓︎</a></h3>
-<p>玩家获得牌，部分参数未列出
-支持参数：
-- cards/card：获得的牌，单张或多张
-- 玩家：牌来源，根据需要设置
-- 字符串：'log'，是否有日志，默认为false；动画方式('gain2','draw2','gain'等)，如果为'gain2'或'draw2'则log为true</p>
+<p>玩家获得牌，部分参数未列出</p>
+<p>支持参数：</p>
+<ul>
+<li>cards/card：获得的牌，单张或多张</li>
+<li>玩家：牌来源，根据需要设置</li>
+<li>字符串：'log'，是否有日志，默认为false；动画方式('gain2','draw2','gain'等)，如果为'gain2'或'draw2'则log为true</li>
+</ul>
 <pre><code class="language-javascript">var cards=…;
 await player.gain(cards,'log');
 //日志：xx玩家获得了x张牌
 </code></pre>
 <h3 id="givetargetcardsvisible">give(target,cards,visible)<a class="headerlink" href="#givetargetcardsvisible" title="Permanent link">⚓︎</a></h3>
-<p>玩家给予target牌
-支持参数：
-- target：接受牌的玩家
-- cards/card：给予的牌，单张或多张
-- visible：布尔值，牌是否明示，默认为false</p>
+<p>玩家给予target牌</p>
+<p>支持参数：</p>
+<ul>
+<li>target：接受牌的玩家</li>
+<li>cards/card：给予的牌，单张或多张</li>
+<li>visible：布尔值，牌是否明示，默认为false</li>
+</ul>
 <pre><code class="language-javascript">var cards=…;
 await player.give(targetPlayer,cards);
 </code></pre>
 <h3 id="tiaozhengshoupainum">tiaoZhengShouPai(num)<a class="headerlink" href="#tiaozhengshoupainum" title="Permanent link">⚓︎</a></h3>
-<p>玩家调整手牌至num张
-支持参数：
-- num：手牌数</p>
+<p>玩家调整手牌至num张</p>
+<p>支持参数：</p>
+<ul>
+<li>num：手牌数</li>
+</ul>
 <pre><code class="language-javascript">player.tiaoZhengShouPai(3); //调整手牌至3张
 </code></pre>
 <h3 id="damagenumsource">damage(num,source)<a class="headerlink" href="#damagenumsource" title="Permanent link">⚓︎</a></h3>
-<p>玩家受到攻击伤害
-支持参数：
-- num：伤害数值，默认为1
-- 玩家：伤害来源，根据需要设置</p>
-<pre><code class="language-javascript">await player.damage(2,sourcePlayer);
+<p>玩家受到攻击伤害</p>
+<p>支持参数：</p>
+<ul>
+<li>num：伤害数值，默认为1</li>
+<li>玩家：伤害来源，根据需要设置</li>
+</ul>
+<pre><code class="language-javascript">await player.damage(2, sourcePlayer);
 </code></pre>
 <h3 id="fashudamagenumsource">faShuDamage(num,source)<a class="headerlink" href="#fashudamagenumsource" title="Permanent link">⚓︎</a></h3>
-<p>玩家受到法术伤害
-支持参数：
-- num：伤害数值，默认为1
-- 玩家：伤害来源，根据需要设置</p>
-<pre><code class="language-javascript">await player.faShuDamage(1,sourcePlayer);
+<p>玩家受到法术伤害</p>
+<p>支持参数：</p>
+<ul>
+<li>num：伤害数值，默认为1</li>
+<li>玩家：伤害来源，根据需要设置</li>
+</ul>
+<pre><code class="language-javascript">await player.faShuDamage(1, sourcePlayer);
 </code></pre>
 <h3 id="addgaipai">addGaiPai()<a class="headerlink" href="#addgaipai" title="Permanent link">⚓︎</a></h3>
-<p>玩家增加盖牌
-支持参数：
-- cards/card：增加的盖牌，单张或多张
-- 玩家：盖牌来源，根据需要设置
-- 字符串：盖牌id
-- 布尔值：是否为展示盖牌，默认为调取盖牌属性中show属性</p>
+<p>玩家增加盖牌</p>
+<p>支持参数：</p>
+<ul>
+<li>cards/card：增加的盖牌，单张或多张</li>
+<li>玩家：盖牌来源，根据需要设置</li>
+<li>字符串：盖牌id</li>
+<li>布尔值：是否为展示盖牌，默认为调取盖牌属性中show属性</li>
+</ul>
 <pre><code class="language-javascript">var cards=…;
 await player.addGaiPai(cards,sourcePlayer,'xxx');
 //日志：xx玩家获得了x张展示的【xxx】盖牌
 </code></pre>
 <h3 id="addjichuxiaoguo">addJiChuXiaoGuo()<a class="headerlink" href="#addjichuxiaoguo" title="Permanent link">⚓︎</a></h3>
-<p>玩家增加基础效果，添加封印请使用addFengYin()
-支持参数：
-- cards/card：增加的盖牌，单张或多张
-- 玩家：基础效果来源，根据需要设置
-- 字符串：基础效果id
-- 布尔值：是否有日志，默认为true</p>
+<p>玩家增加基础效果，添加封印请使用addFengYin()</p>
+<p>支持参数：</p>
+<ul>
+<li>cards/card：增加的盖牌，单张或多张</li>
+<li>玩家：基础效果来源，根据需要设置</li>
+<li>字符串：基础效果id</li>
+<li>布尔值：是否有日志，默认为true</li>
+</ul>
 <pre><code class="language-javascript">var cards=…;
 await player.addJiChuXiaoGuo(cards,'_shengDun');
 </code></pre>
 <h3 id="gainjichuxiaoguotarget">gainJiChuXiaoGuo(target)<a class="headerlink" href="#gainjichuxiaoguotarget" title="Permanent link">⚓︎</a></h3>
-<p>NoTrigger，事件结束有触发器 gainJiChuXiaoGuo
-玩家获得某个角色某个基础效果
-事件result包含xiaoGuo和card属性，分别表示获得的基础效果和获取的卡牌</p>
-<pre><code class="language-javascript">var result=await player.gainJiChuXiaoGuo(event.target).forResult;
+<p>NoTrigger，事件结束有触发器 gainJiChuXiaoGuo</p>
+<p>玩家获得某个角色某个基础效果</p>
+<p>事件result包含xiaoGuo和card属性，分别表示获得的基础效果和获取的卡牌</p>
+<pre><code class="language-javascript">var result = await player.gainJiChuXiaoGuo(event.target).forResult;
 
 console.log(result);
 /*
@@ -4447,10 +4592,10 @@ result = {
 */
 </code></pre>
 <h3 id="removejichuxiaoguotarget">removeJiChuXiaoGuo(target)<a class="headerlink" href="#removejichuxiaoguotarget" title="Permanent link">⚓︎</a></h3>
-<p>NoTrigger，事件结束有触发器 removeJiChuXiaoGuo
-玩家移除某个角色的某个基础效果
-事件result包含xiaoGuo和card属性，分别表示获得的基础效果和移除的卡牌</p>
-<pre><code class="language-javascript">var result=await player.removeJiChuXiaoGuo(event.target).forResult;
+<p>NoTrigger，事件结束有触发器 removeJiChuXiaoGuo</p>
+<p>玩家移除某个角色的某个基础效果</p>
+<p>事件result包含xiaoGuo和card属性，分别表示获得的基础效果和移除的卡牌</p>
+<pre><code class="language-javascript">var result = await player.removeJiChuXiaoGuo(event.target).forResult;
 
 console.log(result);
 /*
@@ -4461,67 +4606,82 @@ result = {
 */
 </code></pre>
 <h3 id="insertphaseskill-insert">insertPhase(skill, insert)<a class="headerlink" href="#insertphaseskill-insert" title="Permanent link">⚓︎</a></h3>
-<p>玩家执行一个额外的回合
-支持参数：
-- skill：字符串，触发额外回合的技能id，用于记录和判断等，非必要
-- insert：布尔值，是否插入到最前面，默认为false，表示插入到最后</p>
-<pre><code class="language-javascript">player.insertPhase('xxx'); //插入一个额外回合
+<p>玩家执行一个额外的回合</p>
+<p>支持参数：</p>
+<ul>
+<li>skill：字符串，触发额外回合的技能id，用于记录和判断等，非必要</li>
+<li>insert：布尔值，是否插入到最前面，默认为false，表示插入到最后</li>
+</ul>
+<pre><code class="language-javascript">player.insertPhase(&quot;xxx&quot;); //插入一个额外回合
 </code></pre>
 <h3 id="changeshiqinumside">changeShiQi(num,side)<a class="headerlink" href="#changeshiqinumside" title="Permanent link">⚓︎</a></h3>
-<p>NoTrigger
-触发器按顺序依次为
-changeShiQiJudge
-changeShiQiBefore
--改变，士气更新
-changeShiQiEnd
-changeShiQiAfter
-改变某一方的士气
-支持参数，支持手动set参数'shiQiMax'，用于设置增减上限
-- num：数值，正数表示增加，负数表示减少，若无num参数，默认为1
-- side：布尔值，若无side参数，则阵营为调用玩家阵营</p>
+<p>NoTrigger</p>
+<p>触发器按顺序依次为</p>
+<p>changeShiQiJudge</p>
+<p>changeShiQiBefore -改变，士气更新</p>
+<p>changeShiQiEnd</p>
+<p>changeShiQiAfter</p>
+<p>改变某一方的士气</p>
+<p>支持参数，支持手动set参数'shiQiMax'，用于设置增减上限</p>
+<ul>
+<li>num：数值，正数表示增加，负数表示减少，若无num参数，默认为1</li>
+<li>side：布尔值，若无side参数，则阵营为调用玩家阵营</li>
+</ul>
 <pre><code class="language-javascript">player.changeShiQi(2); //将我方士气+2
 </code></pre>
 <h3 id="changezhanjixingshinumside">changeZhanJi(xingShi,num,side)<a class="headerlink" href="#changezhanjixingshinumside" title="Permanent link">⚓︎</a></h3>
-<p>改变某一方战绩区的星石数量
-支持参数：
-- xingShi：字符串，支持'baoShi'和'shuiJing'
-- num：数值，若无num参数，默认为1
-- side：布尔值，若无side参数，则阵营为调用玩家阵营</p>
-<pre><code class="language-javascript">player.changeZhanJi('baoShi',2); //将我方战绩区+2宝石
+<p>改变某一方战绩区的星石数量</p>
+<p>支持参数：</p>
+<ul>
+<li>xingShi：字符串，支持'baoShi'和'shuiJing'</li>
+<li>num：数值，若无num参数，默认为1</li>
+<li>side：布尔值，若无side参数，则阵营为调用玩家阵营</li>
+</ul>
+<pre><code class="language-javascript">player.changeZhanJi(&quot;baoShi&quot;, 2); //将我方战绩区+2宝石
 </code></pre>
 <h3 id="addzhanjixingshinum">addZhanJi(xingShi,num)<a class="headerlink" href="#addzhanjixingshinum" title="Permanent link">⚓︎</a></h3>
-<p>添加战绩区num个星石
-支持参数：
-- xingShi：字符串，支持'baoShi'和'shuiJing'
-- num：数值，默认为1</p>
-<pre><code class="language-javascript">player.addZhanJi('shuiJing',2); //战绩区增加2个水晶
+<p>添加战绩区num个星石</p>
+<p>支持参数：</p>
+<ul>
+<li>xingShi：字符串，支持'baoShi'和'shuiJing'</li>
+<li>num：数值，默认为1</li>
+</ul>
+<pre><code class="language-javascript">player.addZhanJi(&quot;shuiJing&quot;, 2); //战绩区增加2个水晶
 </code></pre>
 <h3 id="removezhanjixingshinum">removeZhanJi(xingShi,num)<a class="headerlink" href="#removezhanjixingshinum" title="Permanent link">⚓︎</a></h3>
-<p>移除战绩区num个星石
-支持参数：
-- xingShi：字符串，支持'baoShi'和'shuiJing'
-- num：数值，默认为1</p>
-<pre><code class="language-javascript">player.removeZhanJi('shuiJing',1); //战绩区减少1个水晶
+<p>移除战绩区num个星石</p>
+<p>支持参数：</p>
+<ul>
+<li>xingShi：字符串，支持'baoShi'和'shuiJing'</li>
+<li>num：数值，默认为1</li>
+</ul>
+<pre><code class="language-javascript">player.removeZhanJi(&quot;shuiJing&quot;, 1); //战绩区减少1个水晶
 </code></pre>
 <h3 id="changexingbeinumside">changeXingBei(num,side)<a class="headerlink" href="#changexingbeinumside" title="Permanent link">⚓︎</a></h3>
-<p>改变某一方的星杯数
-支持参数：
-- num：数值，若无num参数，默认为1
-- side：布尔值，若无side参数，则阵营为调用玩家阵营</p>
+<p>改变某一方的星杯数</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，若无num参数，默认为1</li>
+<li>side：布尔值，若无side参数，则阵营为调用玩家阵营</li>
+</ul>
 <pre><code class="language-javascript">player.changeXingBei(1); //将我方星杯+1
 </code></pre>
 <h3 id="showcardscardsstr">showCards(cards,str)<a class="headerlink" href="#showcardscardsstr" title="Permanent link">⚓︎</a></h3>
-<p>玩家展示卡牌，可触发封印师封印
-支持参数：
-- cards：卡牌列表
-- str：字符串，str参数为自定义展示弹窗文字，若无str参数，则默认为"玩家名展示的牌"</p>
-<pre><code class="language-javascript">player.showCards(cards,'请注意这些牌');
+<p>玩家展示卡牌，可触发封印师封印</p>
+<p>支持参数：</p>
+<ul>
+<li>cards：卡牌列表</li>
+<li>str：字符串，str参数为自定义展示弹窗文字，若无str参数，则默认为"玩家名展示的牌"</li>
+</ul>
+<pre><code class="language-javascript">player.showCards(cards, &quot;请注意这些牌&quot;);
 </code></pre>
 <h3 id="showhiddencardscardsstr">showHiddenCards(cards,str)<a class="headerlink" href="#showhiddencardscardsstr" title="Permanent link">⚓︎</a></h3>
-<p>展示出隐藏卡牌，不触发封印师封印
-支持参数：
-- cards：卡牌列表
-- str：字符串，str参数为自定义展示弹窗文字，若无str参数，则默认为"玩家名展示的牌"</p>
+<p>展示出隐藏卡牌，不触发封印师封印</p>
+<p>支持参数：</p>
+<ul>
+<li>cards：卡牌列表</li>
+<li>str：字符串，str参数为自定义展示弹窗文字，若无str参数，则默认为"玩家名展示的牌"</li>
+</ul>
 <pre><code class="language-javascript">player.showHiddenCards(cards);
 </code></pre>
 <h3 id="removebishashuijing">removeBiShaShuiJing()<a class="headerlink" href="#removebishashuijing" title="Permanent link">⚓︎</a></h3>
@@ -4533,97 +4693,121 @@ changeShiQiAfter
 <pre><code class="language-javascript">player.removeBiShaBaoShi();
 </code></pre>
 <h3 id="changenengliangxingshinum">changeNengLiang(xingShi,num)<a class="headerlink" href="#changenengliangxingshinum" title="Permanent link">⚓︎</a></h3>
-<p>改变玩家能量数量
-支持参数：
-- xingShi：字符串，参数支持'baoShi'和'shuiJing'
-- num：数值，可正可负，正数表示增加，负数表示减少，若无num参数，默认为1</p>
-<pre><code class="language-javascript">player.changeNengLiang('shuiJing',-1); //减少1个水晶
+<p>改变玩家能量数量</p>
+<p>支持参数：</p>
+<ul>
+<li>xingShi：字符串，参数支持'baoShi'和'shuiJing'</li>
+<li>num：数值，可正可负，正数表示增加，负数表示减少，若无num参数，默认为1</li>
+</ul>
+<pre><code class="language-javascript">player.changeNengLiang(&quot;shuiJing&quot;, -1); //减少1个水晶
 </code></pre>
 <h3 id="addnengliangxingshinum">addNengLiang(xingShi,num)<a class="headerlink" href="#addnengliangxingshinum" title="Permanent link">⚓︎</a></h3>
-<p>增加玩家能量
-支持参数：
-- xingShi：字符串，参数支持'baoShi'和'shuiJing'
-- num：数值，默认为1</p>
-<pre><code class="language-javascript">player.addNengLiang('baoShi',2); //增加2个宝石
+<p>增加玩家能量</p>
+<p>支持参数：</p>
+<ul>
+<li>xingShi：字符串，参数支持'baoShi'和'shuiJing'</li>
+<li>num：数值，默认为1</li>
+</ul>
+<pre><code class="language-javascript">player.addNengLiang(&quot;baoShi&quot;, 2); //增加2个宝石
 </code></pre>
 <h3 id="removenengliangxingshinum">removeNengLiang(xingShi,num)<a class="headerlink" href="#removenengliangxingshinum" title="Permanent link">⚓︎</a></h3>
 <p>移除玩家能量，xingShi参数支持'baoShi'和'shuiJing'，num参数默认为1</p>
-<pre><code class="language-javascript">player.removeNengLiang('shuiJing'); //移除1个水晶
+<pre><code class="language-javascript">player.removeNengLiang(&quot;shuiJing&quot;); //移除1个水晶
 </code></pre>
 <h3 id="changezhishiwu">changeZhiShiWu()<a class="headerlink" href="#changezhishiwu" title="Permanent link">⚓︎</a></h3>
-<p>改变指示物数量
-支持参数：
-- 数值1：改变数量，正数增加，负数减少，默认为1
-- 数值2：改变过程中指示物上限，若无，则使用指示物默认上限
-- 字符串：指示物id
-- 布尔值：是否强制增减，默认false，若无对应指示物技能，则无法增减</p>
-<pre><code class="language-javascript">player.changeZhiShiWu('xxx',2,4);
+<p>改变指示物数量</p>
+<p>支持参数：</p>
+<ul>
+<li>数值1：改变数量，正数增加，负数减少，默认为1</li>
+<li>数值2：改变过程中指示物上限，若无，则使用指示物默认上限</li>
+<li>字符串：指示物id</li>
+<li>布尔值：是否强制增减，默认false，若无对应指示物技能，则无法增减</li>
+</ul>
+<pre><code class="language-javascript">player.changeZhiShiWu(&quot;xxx&quot;, 2, 4);
 //增加2个xxx，上限最多为4
 </code></pre>
 <h3 id="addzhishiwu">addZhiShiWu()<a class="headerlink" href="#addzhishiwu" title="Permanent link">⚓︎</a></h3>
-<p>添加指示物数量
-支持参数：
-- 数值1：改变数量，正数增加，负数将转化为正数，默认为1
-- 数值2：改变过程中指示物上限，若无，则使用指示物默认上限
-- 字符串：指示物id
-- 布尔值：是否强制增减，默认false，若无对应指示物技能，则无法增减</p>
-<pre><code class="language-javascript">player.addZhiShiWu('xxx');
+<p>添加指示物数量</p>
+<p>支持参数：</p>
+<ul>
+<li>数值1：改变数量，正数增加，负数将转化为正数，默认为1</li>
+<li>数值2：改变过程中指示物上限，若无，则使用指示物默认上限</li>
+<li>字符串：指示物id</li>
+<li>布尔值：是否强制增减，默认false，若无对应指示物技能，则无法增减</li>
+</ul>
+<pre><code class="language-javascript">player.addZhiShiWu(&quot;xxx&quot;);
 //增加1个xxx
 </code></pre>
 <h3 id="removezhishiwu">removeZhiShiWu()<a class="headerlink" href="#removezhishiwu" title="Permanent link">⚓︎</a></h3>
-<p>移除指示物
-支持参数：
-- 数值1：减少数量，正数减少，默认为1
-- 字符串：指示物id</p>
-<pre><code class="language-javascript">player.removeZhiShiWu('xxx');
+<p>移除指示物</p>
+<p>支持参数：</p>
+<ul>
+<li>数值1：减少数量，正数减少，默认为1</li>
+<li>字符串：指示物id</li>
+</ul>
+<pre><code class="language-javascript">player.removeZhiShiWu(&quot;xxx&quot;);
 //减少1个xxx
 </code></pre>
 <h3 id="setzhishiwuzhishiwu-num">setZhiShiWu(zhiShiWu, num)<a class="headerlink" href="#setzhishiwuzhishiwu-num" title="Permanent link">⚓︎</a></h3>
-<p>将指示物设置为num个，不会突破上限，可set('max',num)来设置上限
-支持参数：
-- 字符串：指示物id
-- 数值：数量</p>
-<pre><code class="language-javascript">player.setZhiShiWu('xxx',3);
+<p>将指示物设置为num个，不会突破上限，可set('max',num)来设置上限</p>
+<p>支持参数：</p>
+<ul>
+<li>字符串：指示物id</li>
+<li>数值：数量</li>
+</ul>
+<pre><code class="language-javascript">player.setZhiShiWu(&quot;xxx&quot;, 3);
 //将xxx设置为3个
 </code></pre>
 <h3 id="changehongnummax">changeHong(num,max)<a class="headerlink" href="#changehongnummax" title="Permanent link">⚓︎</a></h3>
-<p>用于技能效果中，便捷改变红色指示物数量
-支持参数：
-- num：数值，正数表示增加，负数表示减少，若无num参数，默认为1
-- max：数值，指示物上限，若无，则使用指示物默认上限</p>
-<pre><code class="language-javascript">player.changeHong(2,5);
+<p>用于技能效果中，便捷改变红色指示物数量</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，正数表示增加，负数表示减少，若无num参数，默认为1</li>
+<li>max：数值，指示物上限，若无，则使用指示物默认上限</li>
+</ul>
+<pre><code class="language-javascript">player.changeHong(2, 5);
 </code></pre>
 <h3 id="changelannummax">changeLan(num,max)<a class="headerlink" href="#changelannummax" title="Permanent link">⚓︎</a></h3>
-<p>用于技能效果中，便捷改变蓝色指示物数量
-支持参数：
-- num：数值，正数表示增加，负数表示减少，若无num参数，默认为1
-- max：数值，指示物上限，若无，则使用指示物默认上限</p>
+<p>用于技能效果中，便捷改变蓝色指示物数量</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，正数表示增加，负数表示减少，若无num参数，默认为1</li>
+<li>max：数值，指示物上限，若无，则使用指示物默认上限</li>
+</ul>
 <pre><code class="language-javascript">player.changeLan(-1);
 </code></pre>
 <h3 id="addhongnummax">addHong(num,max)<a class="headerlink" href="#addhongnummax" title="Permanent link">⚓︎</a></h3>
-<p>用于技能效果中，便捷增加红色指示物数量
-支持参数：
-- num：数值，默认为1
-- max：数值，指示物上限，若无，则使用指示物默认上限</p>
-<pre><code class="language-javascript">player.addHong(3,5);
+<p>用于技能效果中，便捷增加红色指示物数量</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，默认为1</li>
+<li>max：数值，指示物上限，若无，则使用指示物默认上限</li>
+</ul>
+<pre><code class="language-javascript">player.addHong(3, 5);
 </code></pre>
 <h3 id="addlannummax">addLan(num,max)<a class="headerlink" href="#addlannummax" title="Permanent link">⚓︎</a></h3>
-<p>用于技能效果中，便捷增加蓝色指示物数量
-支持参数：
-- num：数值，默认为1
-- max：数值，指示物上限，若无，则使用指示物默认上限</p>
-<pre><code class="language-javascript">player.addLan(2,4);
+<p>用于技能效果中，便捷增加蓝色指示物数量</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，默认为1</li>
+<li>max：数值，指示物上限，若无，则使用指示物默认上限</li>
+</ul>
+<pre><code class="language-javascript">player.addLan(2, 4);
 </code></pre>
 <h3 id="removehongnum">removeHong(num)<a class="headerlink" href="#removehongnum" title="Permanent link">⚓︎</a></h3>
-<p>用于技能效果中，便捷移除红色指示物数量
-支持参数：
-- num：数值，默认为1</p>
+<p>用于技能效果中，便捷移除红色指示物数量</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，默认为1</li>
+</ul>
 <pre><code class="language-javascript">player.removeHong(1);
 </code></pre>
 <h3 id="removelannum">removeLan(num)<a class="headerlink" href="#removelannum" title="Permanent link">⚓︎</a></h3>
-<p>用于技能效果中，便捷移除蓝色指示物数量
-支持参数：
-- num：数值，默认为1</p>
+<p>用于技能效果中，便捷移除蓝色指示物数量</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，默认为1</li>
+</ul>
 <pre><code class="language-javascript">player.removeLan(2);
 </code></pre>
 <h3 id="chongzhi">chongZhi()<a class="headerlink" href="#chongzhi" title="Permanent link">⚓︎</a></h3>
@@ -4635,72 +4819,84 @@ changeShiQiAfter
 <pre><code class="language-javascript">player.hengZhi();
 </code></pre>
 <h3 id="qipai">qiPai()<a class="headerlink" href="#qipai" title="Permanent link">⚓︎</a></h3>
-<p>角色执行弃牌，执行一次超出手牌上限的弃牌，若手牌未超出上限，则不执行弃牌
-用于部分手牌上限下降的技能，来触发弃牌，现检测检测实际较为完善，非必要无需使用</p>
+<p>角色执行弃牌，执行一次超出手牌上限的弃牌，若手牌未超出上限，则不执行弃牌</p>
+<p>用于部分手牌上限下降的技能，来触发弃牌，现检测检测实际较为完善，非必要无需使用</p>
 <pre><code class="language-javascript">player.qiPai();
 </code></pre>
 <h3 id="changezhiliao">changeZhiLiao()<a class="headerlink" href="#changezhiliao" title="Permanent link">⚓︎</a></h3>
-<p>修改角色的治疗数
-支持参数：
-- 数值1：正数表示增加，负数表示减少，若无num参数，默认为1
-- 数值2：改变过程中治疗上限，若无，则使用角色默认上限
-- 玩家：治疗来源，默认无</p>
-<pre><code class="language-javascript">player.changeZhiLiao(1,3);
+<p>修改角色的治疗数</p>
+<p>支持参数：</p>
+<ul>
+<li>数值1：正数表示增加，负数表示减少，若无num参数，默认为1</li>
+<li>数值2：改变过程中治疗上限，若无，则使用角色默认上限</li>
+<li>玩家：治疗来源，默认无</li>
+</ul>
+<pre><code class="language-javascript">player.changeZhiLiao(1, 3);
 //角色治疗+1，治疗最多为3
 </code></pre>
 <h3 id="addzhiliaonumlimit">addZhiLiao(num,limit)<a class="headerlink" href="#addzhiliaonumlimit" title="Permanent link">⚓︎</a></h3>
-<p>角色添加num个治疗
-支持参数：
-- num：数值，默认为1
-- limit：数值，治疗上限，若无，则使用角色默认上限</p>
+<p>角色添加num个治疗</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，默认为1</li>
+<li>limit：数值，治疗上限，若无，则使用角色默认上限</li>
+</ul>
 <pre><code class="language-javascript">player.addZhiLiao(2);
 </code></pre>
 <h3 id="removezhiliaonum">removeZhiLiao(num)<a class="headerlink" href="#removezhiliaonum" title="Permanent link">⚓︎</a></h3>
-<p>角色移除num个治疗
-支持参数：
-- num：数值，默认为1</p>
+<p>角色移除num个治疗</p>
+<p>支持参数：</p>
+<ul>
+<li>num：数值，默认为1</li>
+</ul>
 <pre><code class="language-javascript">player.removeZhiLiao(1);
 </code></pre>
 <h3 id="addfengyinfengyincardssource">addFengYin(fengYin,cards,source)<a class="headerlink" href="#addfengyinfengyincardssource" title="Permanent link">⚓︎</a></h3>
-<p>为角色添加封印
-支持参数：
-- fengYin：字符串，封印id
-- cards：卡牌列表，作为封印的卡牌
-- source：玩家，封印来源</p>
-<pre><code class="language-javascript">player.addFengYin('huoZhiFengYin_xiaoGuo', cards, player);
+<p>为角色添加封印</p>
+<p>支持参数：</p>
+<ul>
+<li>fengYin：字符串，封印id</li>
+<li>cards：卡牌列表，作为封印的卡牌</li>
+<li>source：玩家，封印来源</li>
+</ul>
+<pre><code class="language-javascript">player.addFengYin(&quot;huoZhiFengYin_xiaoGuo&quot;, cards, player);
 </code></pre>
 <h3 id="changeskillsaddskill-removeskill-popup-true">changeSkills(addSkill = [], removeSkill = [], popup = true)<a class="headerlink" href="#changeskillsaddskill-removeskill-popup-true" title="Permanent link">⚓︎</a></h3>
-<p>玩家替换技能
-支持参数：
-- addSkill：列表，添加的技能列表
-- removeSkill：列表，移除的技能列表
-- popup：布尔值，是否弹出技能名，和发动技能时的弹出一致，默认为true</p>
-<pre><code class="language-javascript">player.changeSkills(['xxx'], ['yyy']);
+<p>玩家替换技能</p>
+<p>支持参数：</p>
+<ul>
+<li>addSkill：列表，添加的技能列表</li>
+<li>removeSkill：列表，移除的技能列表</li>
+<li>popup：布尔值，是否弹出技能名，和发动技能时的弹出一致，默认为true</li>
+</ul>
+<pre><code class="language-javascript">player.changeSkills([&quot;xxx&quot;], [&quot;yyy&quot;]);
 </code></pre>
 <h3 id="swaphandcardstargetcards1cards2">swapHandcards(target,cards1,cards2)<a class="headerlink" href="#swaphandcardstargetcards1cards2" title="Permanent link">⚓︎</a></h3>
-<p>玩家与target交换牌
-支持参数：
-- target：交换手牌的目标玩家
-- cards1：玩家选择交换的牌列表，若未设置，则为全部手牌
-- cards2：目标玩家选择交换的牌列表，若未设置，则为全部手牌</p>
+<p>玩家与target交换牌</p>
+<p>支持参数：</p>
+<ul>
+<li>target：交换手牌的目标玩家</li>
+<li>cards1：玩家选择交换的牌列表，若未设置，则为全部手牌</li>
+<li>cards2：目标玩家选择交换的牌列表，若未设置，则为全部手牌</li>
+</ul>
 <pre><code class="language-javascript">player.swapHandcards(targetPlayer);
 </code></pre>
 <h3 id="choosetouseuse">chooseToUse(use)<a class="headerlink" href="#choosetouseuse" title="Permanent link">⚓︎</a></h3>
 <p>玩家选择使用卡牌，无技能使用</p>
 <h3 id="modanuse">moDan(use)<a class="headerlink" href="#modanuse" title="Permanent link">⚓︎</a></h3>
-<p>NoTrigger
-让角色使用魔弹，无技能调用</p>
+<p>NoTrigger</p>
+<p>让角色使用魔弹，无技能调用</p>
 <h3 id="yingzhanuse">yingZhan(use)<a class="headerlink" href="#yingzhanuse" title="Permanent link">⚓︎</a></h3>
 <p>让角色进行应战攻击，阴阳师代替应战中使用，无其他技能调用</p>
 <h3 id="gongjiorfashuuse">gongJiOrFaShu(use)<a class="headerlink" href="#gongjiorfashuuse" title="Permanent link">⚓︎</a></h3>
-<p>NoTrigger
-让角色进行攻击或者法术行动</p>
+<p>NoTrigger</p>
+<p>让角色进行攻击或者法术行动</p>
 <h3 id="gongjiuse">gongJi(use)<a class="headerlink" href="#gongjiuse" title="Permanent link">⚓︎</a></h3>
-<p>NoTrigger
-让角色进行攻击行动</p>
+<p>NoTrigger</p>
+<p>让角色进行攻击行动</p>
 <h3 id="fashuuse">faShu(use)<a class="headerlink" href="#fashuuse" title="Permanent link">⚓︎</a></h3>
-<p>NoTrigger
-让角色进行法术行动</p>
+<p>NoTrigger</p>
+<p>让角色进行法术行动</p>
 <h3 id="qitause">qiTa(use)<a class="headerlink" href="#qitause" title="Permanent link">⚓︎</a></h3>
 <p>让角色进行其他行动，无技能调用</p>
 

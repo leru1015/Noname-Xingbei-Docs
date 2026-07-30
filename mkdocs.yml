@@ -2,6 +2,7 @@ site_name: "AG: JavaScript API Docs"
 nav:
   - Docs:
       - Home: index.md
+      - "技能基础实现逻辑": base.md
       - "enum":
           - "trigger": enum/trigger.md
       - "element":
